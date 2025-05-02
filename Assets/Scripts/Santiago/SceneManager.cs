@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
@@ -29,9 +30,7 @@ public class SceneManager : MonoBehaviour
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != sceneIndex)
         {
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
-            UnityEngine.SceneManagement.SceneManager.SetActiveScene(UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex(sceneIndex));
-
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
         }
     }
 }
