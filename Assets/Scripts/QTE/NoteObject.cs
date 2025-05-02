@@ -5,6 +5,8 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
 
+    public ButtonController buttonController;
+
     public float beatTempo;
 
     public bool canBePressed;
@@ -33,10 +35,12 @@ public class NoteObject : MonoBehaviour
         if (collision.tag == "PerfectScore")
         {
             canBePressed = true;
+            buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
             currentScore = 5;
         }
         else if (collision.tag == "OkScore")
         {
+            buttonController.ChangeEffectMaterial(buttonController.effectOk);
             currentScore = 2;
         }
         
