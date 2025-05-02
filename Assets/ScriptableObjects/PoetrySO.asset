@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4751a943a18ce40a368851d77defc3, type: 3}
+  m_Name: PoetrySO
+  m_EditorClassIdentifier: 
+  title: 
+  author: 
+  lines:
+  - "AMIC\n\r\nI\r\nAmicx (Senher, no\xB7us o cal dir\r\nneys lo nom pus encarzezir),\r\nd\u2019ambas
+    partz vos tramet salutz,\r\ncar es pros et aperceubutz;\r\ns\u2019era\xB7us manca
+    vera merces\r\ndevers la melhor de las tres,\r\nja may mon respieg ni mon suenh\r\nnon
+    aurai en amic de luenh.\r\nPreyar no\xB7us aus d\u2019autre mon be,\r\nmas que
+    vos clami gran merce\r\nque siatz dreituriers e plas\r\nd\u2019un fait c\u2019avem
+    en vostras mas;\r\nqu\u2019en plag soi vengutz ab m\u2019amiga,\r\nque grans
+    mals m\u2019es e gran destriga.\r\nEt em nos autreyatz abdos\r\nque fermem en
+    poder de vos\r\nper dreg a far o per amor,\r\na costum de fin amador.\r\nMas
+    una res m\u2019es gran enuey:\r\nqu\u2019ilh vol e manda que per ley\r\ndigua
+    sa razo e la mostre,\r\ne l\u2019esgardamen sia vostre.\r\nIeu, que\xB7m clam,
+    dey parlar premier,\r\nque razo es e costumier\r\nque sel que pert se deu clamar,\r\ne
+    sel que tol pot contrastar.\r\nDe lieis me clam c\u2019ay pus amada\r\nque nulha
+    dona c\u2019anc fos nada;\r\net amey la pauca e toza,\r\ne pus coras que fo espoza.\r\nE
+    coras que saup far e dir\r\nso que tota gen dec grazir,\r\npensey me que\xB7l
+    vengues denan\r\ne que li mostres mon talan;\r\npregey la que\xB7m dones sazo\r\ndon
+    fos pus gualhartz e pus pro:\r\nque\xB7m baizes las oras que\xB7m vis,\r\ne que
+    sol d\u2019aitan me plevis.\r\nDet m\u2019o, e pres mon omenatje\r\net aic del
+    baizar senhoratje\r\nadoncx..., mas aras m\u2019o estray\r\nses nulh nelegz que
+    non li ay.\r\nPer que m\u2019a fag lo joc del fol,\r\nque so que dona pueissas
+    tol.\r\nEla comta, en sa razo,\r\nque\xB7s cuja que li tenga pro,\r\ne dis qu\u2019enquer
+    no\xB7s conoissia\r\nsi era o sens o folia;\r\nencara comta, may avan,\r\nque
+    don de toza ni d\u2019enfan,\r\nsegon razo, non deu estar.\r\nPer c\u2019a vos
+    tanh del plag jutjar:\r\nveus o, e no vo\xB7n dirai mais;\r\ncar de cascu razo
+    y lays\r\nper abreujar e per auzir\r\ne per vostre jutjamen dir.\r\nE vos trametetz
+    nos en carta\r\na mi com la razos o parta,\r\ne sitot vos es d\u2019amors ricx,\r\nmembre
+    vos de vostre amicx,\r\nsenher.\r\nBergued\xE0, Guillem de. \u201CAmic\u201D"
+  - "AMIC MARQU\xC8S, ENCARA NO FA GAIRE\n\r\nI\nAmics marques, enqera non a gaire\r\nq'ieu
+    fi de vos coinda cansson e bona,\r\nmas ancar n'ai en talan autr'a faire,\r\npuois
+    mos cosseills m'o autrej'e m'o dona;\r\nq'a Sailforas viron miei enemic\r\nl'anta
+    q'ieu.s fi e.l afan e.l destric,\r\nqu.el camp N'Albert laissetz l'elme per tasca:\r\nsi
+    fossetz calvs tuich vos virant la rasca.\n\r\nII\r\nQ'ieu vos cuidei d'entrams
+    los arssos traire,\r\nsi.us empeissi ab ma lanssa gascona\r\nc'al encorbar, sitot
+    vos etz gabaire,\r\nditz qe.l vos vi.N Guillems de Savassona,\r\nq'en las bragas
+    vos tengront per mendic\r\nli canorge e li borges de Vic.\r\nAmics Marques, si
+    mala gota.us nasca,\r\nsi esser pot, meillors n'aiatz a Pasca.\n\r\nIII\r\nJa
+    del tornei no.us cal gabar ni feigner\r\nc'anc non valc tant Rotlans a Serragosa:\r\net
+    eu.s autrei que no m'en cal destreigner,\r\nque mort m'agratz si.l lanssa non
+    fos mosa,\r\nque planamen mi detz tal colp su.l fron\r\nque rire.n fetz En Guillem
+    de Clarmon:\r\ntuich vostre'amic crideron: Mataplana!,\r\nTro lor membret qe.l
+    man aviatz vana.\n\r\nIV\r\nAmics Marques, si.l colp pocsetz enpeigner\r\nmort
+    agratz cel qe.ls maritz escogossa,\r\nlo cortes drut qe.ls corns sap far enpeigner\r\ne
+    non tem glat ni crit ni huc de gossa,\r\ngerra ni fais, ni barieira ni pon,\r\nanz
+    es plus gais que raineta en fon,\r\nque ses aiga non poiria star sana\r\nplus
+    q'ieu d'amor un jorn de la setmana.\n\r\nV\r\nMarques, escriut pot el fer de
+    ma lansa\r\nc'om no-fesatz non pot aver guirensa;\r\ne pois vers es, podetz n'aver
+    doptansa,\r\nc'anc plus traicher de vos non pres naisensa;\r\nneus Mos Sogres,
+    que de Barc\xA1salones\r\nporta las claus d'engans e de no-fes,\r\nvas vos no.n
+    sap lo traich d'una batzola:\r\nper so amdoi legitz en un'escola.\n\r\nVI\r\nRaimon
+    de Paz, mon sirventes romansa\r\na.N Nas-de-corn, e non aias temenssa,\r\nque
+    plus volpill no.n a d'aqui en Fransa,\r\nni plus coart, si eu ai conoissenssa;\r\nque
+    cinc anz a non donet colp ni pres\r\nen l'escut d'aur en que laq dompna es,\r\nni
+    en tornei non capusa ni dola,\r\nanz ten per fol qui sas armas l'afolla\r\nBergued\xE0,
+    Guillem de. \u201CAmic marqu\xE8s, encara no fa gaire\u201D"
