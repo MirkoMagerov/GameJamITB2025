@@ -1940,7 +1940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 124}
+  m_AnchoredPosition: {x: 19, y: 124}
   m_SizeDelta: {x: 797.5667, y: 252.3455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437703714
@@ -1966,8 +1966,8 @@ MonoBehaviour:
   m_text: "El cielo est\xE1 muy ______,  \r\nlas nubes bailan sin ______.  \r\nEl
     viento canta en la ______,  \r\ny el sol sonr\xEDe con ______."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e9ec0e2649f47984c93fea91ae32a667, type: 2}
+  m_sharedMaterial: {fileID: 6306508190344057515, guid: e9ec0e2649f47984c93fea91ae32a667, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
