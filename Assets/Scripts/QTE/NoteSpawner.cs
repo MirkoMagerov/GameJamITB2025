@@ -13,6 +13,11 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private Transform EKeyPosition;
     [SerializeField] private Transform RKeyPosition;
 
+    [SerializeField] private ButtonController QKeyController;
+    [SerializeField] private ButtonController WKeyController;
+    [SerializeField] private ButtonController EKeyController;
+    [SerializeField] private ButtonController RKeyController;
+
     [SerializeField] private List<int> Keys = new List<int>();
 
     public float beatTempo;
@@ -44,21 +49,25 @@ public class NoteSpawner : MonoBehaviour
                         GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
                         QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
                         QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        QKey.GetComponent<NoteObject>().buttonController = QKeyController;
                         break;
                     case 1:
                         GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
                         WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
                         WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        WKey.GetComponent<NoteObject>().buttonController = WKeyController;
                         break;
                     case 2:
                         GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
                         EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
                         EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        EKey.GetComponent<NoteObject>().buttonController = EKeyController;
                         break;
                     case 3:
                         GameObject RKey = Instantiate(keyPrefab, RKeyPosition.position, Quaternion.identity);
                         RKey.GetComponent<NoteObject>().keyToPress = KeyCode.R;
                         RKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        RKey.GetComponent<NoteObject>().buttonController = RKeyController;
                         break;
                 }
             }
@@ -78,21 +87,25 @@ public class NoteSpawner : MonoBehaviour
                                 GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
                                 QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
                                 QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                QKey.GetComponent<NoteObject>().buttonController = QKeyController;
                                 break;
                             case 1:
                                 GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
                                 WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
                                 WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                WKey.GetComponent<NoteObject>().buttonController = WKeyController;
                                 break;
                             case 2:
                                 GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
                                 EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
                                 EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                EKey.GetComponent<NoteObject>().buttonController = EKeyController;
                                 break;
                             case 3:
                                 GameObject RKey = Instantiate(keyPrefab, RKeyPosition.position, Quaternion.identity);
                                 RKey.GetComponent<NoteObject>().keyToPress = KeyCode.R;
                                 RKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                RKey.GetComponent<NoteObject>().buttonController = RKeyController;
                                 break;
                         }
 
