@@ -12,34 +12,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
   m_Name: LevelWordsSO
   m_EditorClassIdentifier: 
-  phrasesLevel1:
-  - phrase: Saps fer-te el
+  phrasesLevel:
+  - phrase: Lorem,               ipsum
     words:
-    - dur
-    - Cop
-    - Cap
-    - Blur
-  - phrase: "per\xF2 ets un ,"
+    - points: 10
+      word: Ipsum
+      idWordSlot: 0
+    - points: 4
+      word: orea
+      idWordSlot: 0
+    - points: -5
+      word: 33333
+      idWordSlot: 0
+    - points: 0
+      word: 44444
+      idWordSlot: 0
+    - points: 1
+      word: wwqwq11212
+      idWordSlot: 0
+  - phrase: besos de amor
     words:
-    - Titella
-    - ddd
-    - asa
-    - qwqwqw
-  - phrase: "la teva fama \xE9s pura"
+    - points: 0
+      word: 66666
+      idWordSlot: 1
+    - points: 0
+      word: 77777
+      idWordSlot: 1
+    - points: 0
+      word: 88888
+      idWordSlot: 1
+    - points: 0
+      word: 99999
+      idWordSlot: 1
+    - points: 0
+      word: 00000
+      idWordSlot: 1
+  - phrase: cccccc
     words:
-    - botella
-    - ddd
-    - asa
-    - qwqwqw
-  - phrase: "Tens m\xE9s pols blanca que"
+    - points: 0
+      word: 1212121
+      idWordSlot: 2
+    - points: 0
+      word: 13131313
+      idWordSlot: 2
+    - points: 0
+      word: 14141414
+      idWordSlot: 2
+    - points: 0
+      word: 15151515
+      idWordSlot: 2
+    - points: 0
+      word: 161616161
+      idWordSlot: 2
+  - phrase: dddddd
     words:
-    - dignitat
-    - ddd
-    - asa
-    - qwqwqw
-  - phrase: ets rei dels gossos i de la
+    - points: 0
+      word: 17171717
+      idWordSlot: 3
+    - points: 0
+      word: 18181818
+      idWordSlot: 3
+    - points: 0
+      word: 19191919
+      idWordSlot: 3
+    - points: 0
+      word: 20202020
+      idWordSlot: 3
+    - points: 0
+      word: 2121212121
+      idWordSlot: 3
+  - phrase: eeeeee
     words:
-    - maldat
-    - ddd
-    - asa
-    - qwqwqw
+    - points: 0
+      word: 2525252525
+      idWordSlot: 4
+    - points: 0
+      word: 26262626262
+      idWordSlot: 4
+    - points: 0
+      word: 27272727
+      idWordSlot: 4
+    - points: 0
+      word: 28282828
+      idWordSlot: 4
+    - points: 0
+      word: 2929292929
+      idWordSlot: 4

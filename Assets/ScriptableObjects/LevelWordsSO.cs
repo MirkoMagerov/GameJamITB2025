@@ -7,18 +7,7 @@ using UnityEngine;
 public class LevelWordsSO : ScriptableObject
 {
     [SerializeField]
-    public Phrase[] phrasesLevel1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Phrase[] phrasesLevel;
 }
 
 
@@ -26,5 +15,19 @@ public class LevelWordsSO : ScriptableObject
 public class Phrase
 {
     public string phrase;
-    public string[] words;
+    public Word[] words;
+}
+
+[Serializable]
+public class Word
+{
+    public int points;
+    public string word;
+    public int idWordSlot;
+
+    public Word(string word, int points)
+    {
+        this.word = word;
+        this.points = points;
+    }
 }

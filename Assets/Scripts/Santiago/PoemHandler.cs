@@ -7,23 +7,45 @@ public class PoemHandler : MonoBehaviour
 {
     [SerializeField]
     private LevelWordsSO levelWordsSO;
-    public int compasIndex;
     [SerializeField]
-    private List<TMP_Text> phrases = new List<TMP_Text>();
+    private List<TMP_Text> compasses = new List<TMP_Text>();
+    private string actualPhrase = "";
 
     private void Awake()
     {
-
+        CloseCompasses();
     }
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < levelWordsSO.phrasesLevel1.Length; i++)
+    }
+    public void ChangeCompas(int compasIndex)
+    {
+        CloseCompasses();
+        compasses[compasIndex].gameObject.SetActive(true);
+        compasses[compasIndex].text = "";
+        for (int i = 0; i < levelWordsSO.phrasesLevel.Length; i++)
         {
-            phrases[i].text = levelWordsSO.phrasesLevel1[i].phrase;
+            compasses[compasIndex].text += levelWordsSO.phrasesLevel[i].phrase + "\n";
         }
     }
 
+    private void CloseCompasses()
+    {
+        foreach (TMP_Text text in compasses)
+        {
+            text.text = "";
+            text.gameObject.SetActive(false);
+        }
+    }
+    private void OnDisable()
+    {
+        GameManager.OnEndOfCompass -= ChangeCompas;
+    }
+    private void OnEnable()
+    {
+        GameManager.OnEndOfCompass += ChangeCompas;
+    }
     // Update is called once per frame
     void Update()
     {
