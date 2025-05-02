@@ -21,6 +21,12 @@ public class ButtonController : MonoBehaviour
         if (Input.GetKeyDown(keyToPress))
         {
             theSR.sprite = pressedImage;
+
+            if (GetComponentInChildren<KeyErrorDetection>().givesError)
+            {
+                NoteScore.instance.score -= 3;
+            }
+
         }
 
         if (Input.GetKeyUp(keyToPress))

@@ -9,35 +9,50 @@ public class NoteObject : MonoBehaviour
 
     public bool canBePressed;
 
+    public int currentScore = 0;
+
     public KeyCode keyToPress;
 
     private void Update()
     {
 
-        transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
+        transform.position -= new Vector3(0f, 5 / beatTempo * Time.deltaTime, 0f);
 
         if (Input.GetKeyDown(keyToPress))
         {
             if (canBePressed)
             {
-                gameObject.SetActive(false);
+                NoteScore.instance.score += currentScore;
+                Destroy(gameObject);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Activator")
+        if (collision.tag == "PerfectScore")
         {
             canBePressed = true;
+            currentScore = 5;
+        }
+        else if (collision.tag == "OkScore")
+        {
+            currentScore = 2;
+        }
+        
+        if (collision.tag == "MissScore")
+        {
+            NoteScore.instance.score -= 5;
+            Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Activator")
+        if (collision.tag == "OkScore")
         {
             canBePressed = false;
+            currentScore = 0;
         }
     }
 

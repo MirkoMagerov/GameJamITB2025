@@ -13,7 +13,11 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private Transform EKeyPosition;
     [SerializeField] private Transform RKeyPosition;
 
+    [SerializeField] private List<int> Keys = new List<int>();
+
     public float beatTempo;
+
+    public bool enemyTurn;
 
     private bool gameEnded = false;
 
@@ -28,34 +32,76 @@ public class NoteSpawner : MonoBehaviour
     {
         while (!gameEnded)
         {
-            yield return new WaitForSeconds(beatTempo);
-
-            int randomKey = Random.Range(0, 4);
-
-            switch (randomKey)
+            if (enemyTurn)
             {
-                case 0:
-                    GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
-                    QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
-                    QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                    break;
-                case 1:
-                    GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
-                    WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
-                    WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                    break;
-                case 2:
-                    GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
-                    EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
-                    EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                    break;
-                case 3:
-                    GameObject RKey = Instantiate(keyPrefab, RKeyPosition.position, Quaternion.identity);
-                    RKey.GetComponent<NoteObject>().keyToPress = KeyCode.R;
-                    RKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                    break;
+                yield return new WaitForSeconds(beatTempo);
+
+                int randomKey = Random.Range(0, 4);
+
+                switch (randomKey)
+                {
+                    case 0:
+                        GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
+                        QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
+                        QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        break;
+                    case 1:
+                        GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
+                        WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
+                        WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        break;
+                    case 2:
+                        GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
+                        EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
+                        EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        break;
+                    case 3:
+                        GameObject RKey = Instantiate(keyPrefab, RKeyPosition.position, Quaternion.identity);
+                        RKey.GetComponent<NoteObject>().keyToPress = KeyCode.R;
+                        RKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                        break;
+                }
+            }
+            else
+            {
+                while (!enemyTurn)
+                {
+
+                    for (int i = 0; i < Keys.Count; i++)
+                    {
+
+                        yield return new WaitForSeconds(beatTempo);
+
+                        switch (Keys[i])
+                        {
+                            case 0:
+                                GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
+                                QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
+                                QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                break;
+                            case 1:
+                                GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
+                                WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
+                                WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                break;
+                            case 2:
+                                GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
+                                EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
+                                EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                break;
+                            case 3:
+                                GameObject RKey = Instantiate(keyPrefab, RKeyPosition.position, Quaternion.identity);
+                                RKey.GetComponent<NoteObject>().keyToPress = KeyCode.R;
+                                RKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                                break;
+                        }
+
+                    }
+                     
+                }
+
             }
         }
-    }
 
+    }
 }
