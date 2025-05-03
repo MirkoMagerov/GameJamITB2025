@@ -8,6 +8,10 @@ public class MenuHandler : MonoBehaviour
     private List<GameObject> targetDelay = new();
     [SerializeField]
     private float delayTime;
+
+    [SerializeField] private GameObject resourcesCanvas;
+    [SerializeField] private GameObject scrollingText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +33,22 @@ public class MenuHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         targetDelay[targetIndex].SetActive(true);
+    }
+
+    public void ShowResources()
+    {
+
+        if (resourcesCanvas.activeSelf)
+        {
+            resourcesCanvas.SetActive(false);
+            scrollingText.SetActive(true);
+            return;
+        }
+        else
+        {
+            resourcesCanvas.SetActive(true);
+            scrollingText.SetActive(false);
+        }
+
     }
 }
