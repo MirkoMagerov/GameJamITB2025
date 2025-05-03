@@ -46,7 +46,9 @@ public class PauseManager : MonoBehaviour
 
     public void RestartLevel()
     {
-
+        int currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(currentScene);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     public void QuitGame()
