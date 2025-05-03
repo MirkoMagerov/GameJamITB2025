@@ -10,8 +10,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private float sliderMin = 0f;
     [SerializeField] private float sliderMax = 100f;
     [SerializeField] private float sliderDecayRate = 1f;
-    [SerializeField] private float winThreshold = 100f;
-    [SerializeField] private float loseThreshold = 0f;
+    [SerializeField] private float leftPlayerWinPoints = 100f;
+    [SerializeField] private float rightPlayerWinPoints = 0f;
 
     private float currentScore;
 
@@ -68,11 +68,11 @@ public class ScoreManager : MonoBehaviour
 
     private void CheckVictory()
     {
-        if (currentScore >= winThreshold)
+        if (currentScore >= leftPlayerWinPoints)
         {
             Debug.Log("¡Jugador Azul gana la batalla de gallos!");
         }
-        else if (currentScore <= loseThreshold)
+        else if (currentScore <= rightPlayerWinPoints)
         {
             Debug.Log("¡Jugador Rojo gana la batalla de gallos!");
         }
