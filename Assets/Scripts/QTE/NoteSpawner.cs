@@ -16,7 +16,6 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private ButtonController WKeyController;
     [SerializeField] private ButtonController EKeyController;
 
-    [SerializeField] private List<int> Keys = new List<int>();
 
     public float beatTempo;
 
@@ -41,30 +40,20 @@ public class NoteSpawner : MonoBehaviour
 
                 int randomKey = Random.Range(0, 3);
 
-                switch (randomKey)
+                int doubleKeys = Random.Range(0, 4);
+
+                CreateKey(randomKey);
+
+                if (doubleKeys == 1)
                 {
-                    case 0:
-                        GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
-                        QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
-                        QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        QKey.GetComponent<NoteObject>().buttonController = QKeyController;
-                        QKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
-                        break;
-                    case 1:
-                        GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
-                        WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
-                        WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        WKey.GetComponent<NoteObject>().buttonController = WKeyController;
-                        WKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
-                        break;
-                    case 2:
-                        GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
-                        EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
-                        EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        EKey.GetComponent<NoteObject>().buttonController = EKeyController;
-                        EKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
-                        break;
+                    int randomKey2 = Random.Range(0, 3);
+                    while (randomKey2 == randomKey)
+                    {
+                        randomKey2 = Random.Range(0, 3);
+                    }
+                    CreateKey(randomKey2);
                 }
+
             }
             else
             {
@@ -80,21 +69,21 @@ public class NoteSpawner : MonoBehaviour
                         ArrowLeftKey.GetComponent<NoteObject>().keyToPress = KeyCode.LeftArrow;
                         ArrowLeftKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                         ArrowLeftKey.GetComponent<NoteObject>().buttonController = QKeyController;
-                        ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
+                        ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
                         break;
                     case 1:
                         GameObject ArrowDownKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
                         ArrowDownKey.GetComponent<NoteObject>().keyToPress = KeyCode.DownArrow;
                         ArrowDownKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                         ArrowDownKey.GetComponent<NoteObject>().buttonController = WKeyController;
-                        ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
+                        ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
                         break;
                     case 2:
                         GameObject ArrowRightKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
                         ArrowRightKey.GetComponent<NoteObject>().keyToPress = KeyCode.RightArrow;
                         ArrowRightKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                         ArrowRightKey.GetComponent<NoteObject>().buttonController = EKeyController;
-                        ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo / 2;
+                        ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
                         break;
                 }
 
@@ -102,4 +91,35 @@ public class NoteSpawner : MonoBehaviour
         }
 
     }
+
+    private void CreateKey(int randomKey)
+    {
+        switch (randomKey)
+        {
+            case 0:
+                GameObject QKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
+                QKey.GetComponent<NoteObject>().keyToPress = KeyCode.Q;
+                QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                QKey.GetComponent<NoteObject>().buttonController = QKeyController;
+                QKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+            case 1:
+                GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
+                WKey.GetComponent<NoteObject>().keyToPress = KeyCode.W;
+                WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                WKey.GetComponent<NoteObject>().buttonController = WKeyController;
+                WKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+            case 2:
+                GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
+                EKey.GetComponent<NoteObject>().keyToPress = KeyCode.E;
+                EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                EKey.GetComponent<NoteObject>().buttonController = EKeyController;
+                EKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+        }
+    }
+
 }
+
+

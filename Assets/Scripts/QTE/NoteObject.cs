@@ -43,8 +43,7 @@ public class NoteObject : MonoBehaviour
 
     private void Update()
     {
-
-        transform.position -= new Vector3(0f, 5 / beatTempo * Time.deltaTime, 0f);
+        transform.position -= new Vector3(0f, beatTempo * 8 * Time.deltaTime, 0f);
 
         if (Input.GetKeyDown(keyToPress))
         {
@@ -52,6 +51,22 @@ public class NoteObject : MonoBehaviour
             {
                 NoteScore.instance.score += currentScore;
                 BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
+
+                if (currentScore == 5)
+                {
+                    AudioManager myObject = GameObject.Find("PerfectSFX").GetComponent<AudioManager>();
+                    myObject.PlaySound();
+                    buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
+                    BackgroundGuitarEffects.Instance.ChangeColor(2);
+                }
+                else if (currentScore == 2)
+                {
+                    AudioManager myObject = GameObject.Find("OkSFX").GetComponent<AudioManager>();
+                    myObject.PlaySound();
+                    buttonController.ChangeEffectMaterial(buttonController.effectOk);
+                    BackgroundGuitarEffects.Instance.ChangeColor(1);
+                }
+
                 Destroy(gameObject);
             }
         }
@@ -62,16 +77,11 @@ public class NoteObject : MonoBehaviour
         if (collision.tag == "PerfectScore")
         {
             canBePressed = true;
-            buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
-            BackgroundGuitarEffects.Instance.ChangeColor(2);
             currentScore = 5;
         }
         else if (collision.tag == "OkScore")
         {
-            Debug.Log("Ok score");
             canBePressed = true;
-            buttonController.ChangeEffectMaterial(buttonController.effectOk);
-            BackgroundGuitarEffects.Instance.ChangeColor(1);
             currentScore = 2;
         }
         
@@ -80,6 +90,10 @@ public class NoteObject : MonoBehaviour
             NoteScore.instance.score -= 5;
             BackgroundGuitarEffects.Instance.ChangeColor(0);
             BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
+
+            AudioManager myObject = GameObject.Find("MissSFX").GetComponent<AudioManager>();
+            myObject.PlayRandomPitch();
+
             Destroy(gameObject);
         }
     }
@@ -88,7 +102,6 @@ public class NoteObject : MonoBehaviour
     {
         if (collision.tag == "ButtonCollider")
         {
-            Debug.Log("Missed");
             canBePressed = false;
             currentScore = 0;
         }
