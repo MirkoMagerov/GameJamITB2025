@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Image characterAvatarImage;
     public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI dialogueText;
-    
+
     public bool isDialogueActive = false;
     public float typingSpeed = 0.2f;
 
@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return) && isDialogueActive)
+        if (Input.GetKeyDown(KeyCode.Return) && isDialogueActive)
         {
             if (isTyping)
             {
@@ -65,7 +65,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         isDialogueActive = true;
-        animator.Play("Show");
+        //animator.Play("Show");
 
         dialogueLines.Clear();
 
@@ -102,7 +102,7 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-        foreach(char letter in line.line.ToCharArray())
+        foreach (char letter in line.line.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
@@ -114,6 +114,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         isDialogueActive = false;
-        animator.Play("Hide");
+        //animator.Play("Hide");
     }
 }

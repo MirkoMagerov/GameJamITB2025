@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
+  m_Name: TestingWords
+  m_EditorClassIdentifier: 
+  phrasesLevel:
+  - phrase: En la noche clara brilla la _____,
+    words:
+    - points: 10
+      word: Luna
+      idWordSlot: 0
+    - points: -10
+      word: Cuna
+      idWordSlot: 1
+    - points: -10
+      word: Brisa
+      idWordSlot: 2
+  - phrase: la brisa susurra con voz muy _____,
+    words:
+    - points: 10
+      word: Calmada
+      idWordSlot: 0
+    - points: -10
+      word: Gritona
+      idWordSlot: 1
+    - points: -10
+      word: Suave
+      idWordSlot: 2
+  - phrase: Las hojas danzan sobre la _____,
+    words: []
+  - phrase: mientras el tiempo se vuelve _____.
+    words: []

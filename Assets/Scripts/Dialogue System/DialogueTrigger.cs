@@ -28,6 +28,14 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            TriggerDialoge();
+        }
+    }
+
     public void TriggerDialoge()
     {
         DialogueManager.Instance.StartDialogue(dialogue);
@@ -35,7 +43,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             TriggerDialoge();
         }
