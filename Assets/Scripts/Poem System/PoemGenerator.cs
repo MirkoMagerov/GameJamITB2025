@@ -68,6 +68,7 @@ public class PoetryGenerator : MonoBehaviour
 
     public void DisplayNextLine()
     {
+        Debug.Log(currentPhraseIndex);
         if (currentPhraseIndex >= specialWords.phrasesCompass.Length)
         {
             EndPoem();
@@ -200,6 +201,7 @@ public class PoetryGenerator : MonoBehaviour
     public void EndPoem()
     {
         isDisplaying = false;
+        GameManager.Instance.ChangeOfTurn();
     }
 
     private void ShowWordOptions(Word[] options)

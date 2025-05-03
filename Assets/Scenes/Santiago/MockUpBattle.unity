@@ -924,17 +924,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846165635}
   m_CullTransparentMesh: 1
---- !u!114 &956961855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3237991873967459877, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-  m_PrefabInstance: {fileID: 1292887955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1084990267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,14 +1190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Poetry
       objectReference: {fileID: 0}
-    - target: {fileID: 3258210029174083082, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1337
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993735165094178012, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_text
-      value: w
-      objectReference: {fileID: 0}
     - target: {fileID: 4605503686980192479, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1241,10 +1222,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5340953672990233276, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: specialWords
-      value: 
-      objectReference: {fileID: 11400000, guid: 6a419cd4b463e714593462832b02f6f4, type: 2}
     - target: {fileID: 6576799458791010747, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1321,31 +1298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7667456752496750623, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_text
-      value: 'e
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8145186059916710522, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1369
-      objectReference: {fileID: 0}
-    - target: {fileID: 8400567423340577993, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -640
-      objectReference: {fileID: 0}
-    - target: {fileID: 8635652085023128882, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      propertyPath: m_text
-      value: q
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2780370201815674116, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1292887958}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
 --- !u!4 &1292887956 stripped
 Transform:
@@ -1357,20 +1313,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2780370201815674116, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
   m_PrefabInstance: {fileID: 1292887955}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1292887958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292887957}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e659af9ed0b4d47b3682477b0741b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelWordsSO: {fileID: 11400000, guid: 6a419cd4b463e714593462832b02f6f4, type: 2}
-  phrase: {fileID: 956961855}
 --- !u!1 &1311462209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +1935,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2128160527}
     m_Modifications:
+    - target: {fileID: 1196183629734323226, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c42f87bfffd980d43b85cd9b3ed7a112, type: 3}
     - target: {fileID: 1615906671020483290, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2017,6 +1963,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1677558373819542947, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b2d3f022063a7a54db87b0d789bd0144, type: 3}
     - target: {fileID: 2780370201815674116, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_Name
       value: Poetry
@@ -2052,6 +2002,14 @@ PrefabInstance:
     - target: {fileID: 5304479042854763577, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243630190882203065, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243630190882203065, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
       objectReference: {fileID: 0}
     - target: {fileID: 6576799458791010747, guid: 9e1a3ab6cb321db47927156b1ed45103, type: 3}
       propertyPath: m_AnchorMax.y
