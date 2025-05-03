@@ -38,22 +38,17 @@ public class ScoreManager : MonoBehaviour
         CheckVictory();
     }
 
-    //public void ApplyQTEResult(bool isSuccess, bool isPerfect)
-    //{
-    //    if (isSuccess) currentScore += isPerfect ? 15f : 10f;
-    //    else currentScore -= 10f;
-
-    //    UpdateSlider();
-    //    CheckVictory();
-    //}
-
-    public void ApplyWordPlacement(bool isCorrect)
+    public void ApplyQTEResult(int score, bool isLeftPlayer)
     {
-        Debug.Log($"ScoreManager: {isCorrect}");
-        currentScore += isCorrect ? 10f : -10f;
+        // Si el jugador es el de la derecha, invertimos la dirección
+        if (!isLeftPlayer)
+            score *= -1;
+
+        currentScore += score;
         UpdateSlider();
         CheckVictory();
     }
+
 
     public void ApplyWordPlacement(int points, bool leftPLayer)
     {

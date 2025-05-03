@@ -32,24 +32,32 @@ public class GameManager : MonoBehaviour
         ChangeOfTurn();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ChangeOfTurn();
+        }
+    }
+
     public void EndOfPhrase()
     {
         currentPhrase++;
         Debug.Log(currentPhrase);
-        ChangeOfTurn();
+        //ChangeOfTurn();
         OnEndOfCompass?.Invoke(currentPhrase);
     }
 
     public void ChangeOfTurn()
     {
-        if (currentPhrase % phrasesPerRound != 0)
-            return;
+        // if (currentPhrase % phrasesPerRound != 0)
+        //     return;
         leftPlayerPoem = !leftPlayerPoem;
-        if (leftPlayerPoem == false)
+        if (!leftPlayerPoem)
         {
             players[0].poemGameObject.gameObject.SetActive(false);
             players[0].TimerHandler.gameObject.SetActive(false);
-            laud.transform.position = players[0].laudGameObject.gameObject.transform.position;
+            players[0].laudGameObject.gameObject.SetActive(true);
 
             players[1].poemGameObject.gameObject.SetActive(true);
             players[1].TimerHandler.gameObject.SetActive(true);
@@ -63,7 +71,7 @@ public class GameManager : MonoBehaviour
 
             players[0].poemGameObject.gameObject.SetActive(true);
             players[0].TimerHandler.gameObject.SetActive(true);
-            laud.transform.position = players[0].laudGameObject.gameObject.transform.position;
+            players[0].laudGameObject.gameObject.SetActive(false);
         }
     }
 

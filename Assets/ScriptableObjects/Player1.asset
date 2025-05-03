@@ -14,17 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phrasesCompass:
   - phrase: "Ets un buf\xF3 recargolat, sense ni un bri de cervell, un aut\xE9ntic
-      idiota[]"
-    words:
-    - points: 0
-      word: ' '
-      idWordSlot: 0
-    - points: 0
-      word: ' '
-      idWordSlot: 0
-    - points: 0
-      word: ' '
-      idWordSlot: 0
+      idiota"
+    words: []
   - phrase: Saltironeges com pilota, fent el ridicul a cada passa, una vergonya de
       []
     words:
@@ -33,11 +24,11 @@ MonoBehaviour:
       idWordSlot: 0
     - points: 0
       word: triota
-      idWordSlot: 0
+      idWordSlot: 1
     - points: 0
       word: ornitologa
       idWordSlot: 0
-  - phrase: Et llueixes de servir l'amo com una [mascota]
+  - phrase: Et llueixes de servir l'amo com una []
     words:
     - points: 0
       word: mascota
@@ -49,7 +40,7 @@ MonoBehaviour:
       word: "hipogluc\xE8mia"
       idWordSlot: 0
   - phrase: "I encara gosar, opinar, plena de vanitat i desdeny, campi\xF3 de la
-      [nota]"
+      []"
     words:
     - points: 0
       word: nota
