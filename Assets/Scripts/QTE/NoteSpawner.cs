@@ -57,36 +57,23 @@ public class NoteSpawner : MonoBehaviour
             }
             else
             {
-
                 yield return new WaitForSeconds(beatTempo);
 
                 int randomKey = Random.Range(0, 3);
 
-                switch (randomKey)
-                {
-                    case 0:
-                        GameObject  ArrowLeftKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
-                        ArrowLeftKey.GetComponent<NoteObject>().keyToPress = KeyCode.LeftArrow;
-                        ArrowLeftKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        ArrowLeftKey.GetComponent<NoteObject>().buttonController = QKeyController;
-                        ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
-                        break;
-                    case 1:
-                        GameObject ArrowDownKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
-                        ArrowDownKey.GetComponent<NoteObject>().keyToPress = KeyCode.DownArrow;
-                        ArrowDownKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        ArrowDownKey.GetComponent<NoteObject>().buttonController = WKeyController;
-                        ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
-                        break;
-                    case 2:
-                        GameObject ArrowRightKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
-                        ArrowRightKey.GetComponent<NoteObject>().keyToPress = KeyCode.RightArrow;
-                        ArrowRightKey.GetComponent<NoteObject>().beatTempo = beatTempo;
-                        ArrowRightKey.GetComponent<NoteObject>().buttonController = EKeyController;
-                        ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
-                        break;
-                }
+                int doubleKeys = Random.Range(0, 4);
 
+                CreateKeyRightPlayer(randomKey);
+
+                if (doubleKeys == 1)
+                {
+                    int randomKey2 = Random.Range(0, 3);
+                    while (randomKey2 == randomKey)
+                    {
+                        randomKey2 = Random.Range(0, 3);
+                    }
+                    CreateKeyRightPlayer(randomKey2);
+                }
             }
         }
 
@@ -120,6 +107,33 @@ public class NoteSpawner : MonoBehaviour
         }
     }
 
+    private void CreateKeyRightPlayer(int randomKey)
+    {
+        switch (randomKey)
+        {
+            case 0:
+                GameObject ArrowLeftKey = Instantiate(keyPrefab, QKeyPosition.position, Quaternion.identity);
+                ArrowLeftKey.GetComponent<NoteObject>().keyToPress = KeyCode.LeftArrow;
+                ArrowLeftKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                ArrowLeftKey.GetComponent<NoteObject>().buttonController = QKeyController;
+                ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+            case 1:
+                GameObject ArrowDownKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
+                ArrowDownKey.GetComponent<NoteObject>().keyToPress = KeyCode.DownArrow;
+                ArrowDownKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                ArrowDownKey.GetComponent<NoteObject>().buttonController = WKeyController;
+                ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+            case 2:
+                GameObject ArrowRightKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
+                ArrowRightKey.GetComponent<NoteObject>().keyToPress = KeyCode.RightArrow;
+                ArrowRightKey.GetComponent<NoteObject>().beatTempo = beatTempo;
+                ArrowRightKey.GetComponent<NoteObject>().buttonController = EKeyController;
+                ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                break;
+        }
+    }
 }
 
 
