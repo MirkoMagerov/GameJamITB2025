@@ -7,12 +7,14 @@ public class PoetryGenerator : MonoBehaviour
 {
     public static PoetryGenerator Instance;
 
+    [SerializeField] private Timer timerSlider;
+
     public TextMeshProUGUI poemText;
     public LevelWordsSO specialWords;
 
-    public TextMeshProUGUI optionIText;
-    public TextMeshProUGUI optionOText;
-    public TextMeshProUGUI optionPText;
+    public TextMeshProUGUI wordSlot1;
+    public TextMeshProUGUI wordSlot2;
+    public TextMeshProUGUI wordSlot3;
 
     public bool isDisplaying = false;
     public float typingSpeed = 0.1f;
@@ -43,17 +45,9 @@ public class PoetryGenerator : MonoBehaviour
         }
     }
 
-    private void CompleteCurrentLine()
+    void Start()
     {
-        if (typingCoroutine != null)
-        {
-            StopCoroutine(typingCoroutine);
-        }
-
-        isTyping = false;
-        typingCoroutine = null;
-
-        poemText.text += currentLine;
+        timerSlider.gameObject.SetActive(false);
     }
 
     public void StartPoem()
@@ -73,7 +67,6 @@ public class PoetryGenerator : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        // Verificar si ya no quedan frases
         if (currentPhraseIndex >= specialWords.phrasesLevel.Length)
         {
             EndPoem();
@@ -90,23 +83,94 @@ public class PoetryGenerator : MonoBehaviour
             StopCoroutine(typingCoroutine);
         }
 
-        typingCoroutine = StartCoroutine(TypeLine(currentLine));
+        typingCoroutine = StartCoroutine(TypeLine(currentLine, currentPhrase.words));
     }
 
-
-
-    public IEnumerator TypeLine(string line)
+    public IEnumerator TypeLine(string line, Word[] wordOptions)
     {
         isTyping = true;
-
-        // Conservar el texto anterior
         string previousText = poemText.text;
-        string currentLineText = "";
+        string beforePlaceholder = "";
+        string afterPlaceholder = "";
+        int insertIndex = line.IndexOf('[');
 
-        // Mostrar la línea letra por letra
-        for (int i = 0; i < line.Length; i++)
+        if (insertIndex == -1)
         {
-            currentLineText += line[i];
+            Debug.LogError(line);
+            Debug.LogError("No se encontró el marcador [ en la línea.");
+            yield break;
+        }
+
+        // Separar la línea antes y después del marcador
+        beforePlaceholder = line[..insertIndex];
+        afterPlaceholder = line[(insertIndex + 2)..]; // Excluir el marcador
+
+        string currentLineText = "";
+        for (int i = 0; i < beforePlaceholder.Length; i++)
+        {
+            currentLineText += beforePlaceholder[i];
+            poemText.text = previousText + currentLineText;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        timerSlider.gameObject.SetActive(true);
+        timerSlider.SetupTimer(pauseDuration);
+        ShowWordOptions(wordOptions);
+
+        Word chosenWord = null;
+        float timer = 0f;
+        bool selected = false;
+
+        void OnKeyInput(KeyCode key, int index)
+        {
+            if (!selected && Input.GetKeyDown(key))
+            {
+                Debug.Log("Palabra seleccionada: " + chosenWord.word + " - Puntos: " + chosenWord.points);
+                timerSlider.gameObject.SetActive(false);
+                chosenWord = wordOptions[index];
+                selected = true;
+            }
+        }
+
+        while (timer < pauseDuration && !selected)
+        {
+            OnKeyInput(KeyCode.I, 0);
+            OnKeyInput(KeyCode.O, 1);
+            OnKeyInput(KeyCode.P, 2);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (!selected)
+        {
+            timerSlider.gameObject.SetActive(false);
+            List<Word> negativeWords = new List<Word>();
+            foreach (var w in wordOptions)
+            {
+                if (w.points < 0) negativeWords.Add(w);
+            }
+
+            if (negativeWords.Count > 0)
+                chosenWord = negativeWords[Random.Range(0, negativeWords.Count)];
+            else
+                chosenWord = wordOptions[Random.Range(0, wordOptions.Length)];
+
+            Debug.Log("Tiempo agotado. Se eligió aleatoriamente: " + chosenWord.word + " - Puntos: " + chosenWord.points);
+        }
+
+        HideWordOptions();
+
+        for (int i = 0; i < chosenWord.word.Length; i++)
+        {
+            currentLineText += chosenWord.word[i];
+            poemText.text = previousText + currentLineText;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        for (int i = 0; i < afterPlaceholder.Length; i++)
+        {
+            currentLineText += afterPlaceholder[i];
             poemText.text = previousText + currentLineText;
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -114,64 +178,28 @@ public class PoetryGenerator : MonoBehaviour
         isTyping = false;
         typingCoroutine = null;
 
-        // Mostrar las opciones de palabras
-        DisplayWordOptions(currentPhrase.words);
-
-        // Esperar la elección del jugador
-        pauseCoroutine = StartCoroutine(WaitForPlayerChoice(currentPhrase.words));
-    }
-
-    private IEnumerator WaitForPlayerChoice(Word[] words)
-    {
-        optionSelected = false;
-
-        float elapsed = 0f;
-        while (elapsed < pauseDuration)
-        {
-            if (Input.GetKeyDown(KeyCode.I) && words.Length > 0)
-            {
-                Debug.Log("Seleccionaste: " + words[0].word + " (" + words[0].points + " puntos)");
-                optionSelected = true;
-                break;
-            }
-            else if (Input.GetKeyDown(KeyCode.O) && words.Length > 1)
-            {
-                Debug.Log("Seleccionaste: " + words[1].word + " (" + words[1].points + " puntos)");
-                optionSelected = true;
-                break;
-            }
-            else if (Input.GetKeyDown(KeyCode.P) && words.Length > 2)
-            {
-                Debug.Log("Seleccionaste: " + words[2].word + " (" + words[2].points + " puntos)");
-                optionSelected = true;
-                break;
-            }
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        // Limpiar opciones
-        optionIText.text = "";
-        optionOText.text = "";
-        optionPText.text = "";
-
-        // Saltar línea
         poemText.text += "\n";
+        yield return new WaitForSeconds(0.5f);
+
         DisplayNextLine();
     }
-
-    private void DisplayWordOptions(Word[] words)
-    {
-        optionIText.text = words.Length > 0 ? words[0].word : "";
-        optionOText.text = words.Length > 1 ? words[1].word : "";
-        optionPText.text = words.Length >= 2 ? words[2].word : "";
-    }
-
 
     public void EndPoem()
     {
         isDisplaying = false;
-        // Puedes añadir alguna animación o evento para cuando termine el poema
+    }
+
+    private void ShowWordOptions(Word[] options)
+    {
+        wordSlot1.text = options[0].word;
+        wordSlot2.text = options[1].word;
+        wordSlot3.text = options[2].word;
+    }
+
+    private void HideWordOptions()
+    {
+        wordSlot1.text = "";
+        wordSlot2.text = "";
+        wordSlot3.text = "";
     }
 }

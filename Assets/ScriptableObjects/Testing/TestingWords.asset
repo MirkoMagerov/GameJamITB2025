@@ -13,29 +13,47 @@ MonoBehaviour:
   m_Name: TestingWords
   m_EditorClassIdentifier: 
   phrasesLevel:
-  - phrase: En la noche clara brilla la _____,
+  - phrase: En la noche clara brilla la [],
     words:
     - points: 10
-      word: Luna
+      word: luna
       idWordSlot: 0
     - points: -10
-      word: Cuna
+      word: cuna
       idWordSlot: 1
     - points: -10
-      word: Brisa
+      word: brisa
       idWordSlot: 2
-  - phrase: la brisa susurra con voz muy _____,
+  - phrase: la brisa susurra con voz muy [],
     words:
     - points: 10
-      word: Calmada
+      word: calmada
       idWordSlot: 0
     - points: -10
-      word: Gritona
+      word: gritona
+      idWordSlot: 0
+    - points: -10
+      word: suave
+      idWordSlot: 2
+  - phrase: Las hojas danzan sobre la [],
+    words:
+    - points: -10
+      word: hierba
+      idWordSlot: 0
+    - points: 10
+      word: tierra
       idWordSlot: 1
     - points: -10
-      word: Suave
+      word: agua
       idWordSlot: 2
-  - phrase: Las hojas danzan sobre la _____,
-    words: []
-  - phrase: mientras el tiempo se vuelve _____.
-    words: []
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2

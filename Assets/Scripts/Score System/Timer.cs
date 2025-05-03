@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,6 @@ public class Timer : MonoBehaviour
     [SerializeField] private Slider timeSlider;
     [SerializeField] private Image fillImage;
 
-    // Shake parameters
     [SerializeField] private float shakeStartTime = 0.4f;
     [SerializeField] private float shakeIntensity = 5f;
     [SerializeField] private float shakeSpeed = 10f;
@@ -18,10 +16,6 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timeSlider.maxValue = timeLimit;
-        timeSlider.value = timeLimit;
-        timeSlider.minValue = 0f;
-
         sliderRect = timeSlider.GetComponent<RectTransform>();
         originalPosition = sliderRect.localPosition;
     }
@@ -35,29 +29,23 @@ public class Timer : MonoBehaviour
             timeSlider.value = timeLimit;
             sliderRect.localPosition = originalPosition;
         }
-        else
+        else if (timeSlider.value > 0f)
         {
             timeSlider.value -= Time.deltaTime;
         }
 
         float normalizedTime = timeSlider.value / timeSlider.maxValue;
 
-        // Color verde para tiempo alto
         Color green = new Color(0.1f, 0.9f, 0.1f);
-        // Color amarillo para tiempo medio
         Color yellow = new Color(1.0f, 0.9f, 0.0f);
-        // Color rojo intenso para tiempo bajo
         Color red = new Color(1.0f, 0.0f, 0.0f);
 
-        // Transición con umbral ajustado para mostrar más rojo
         if (normalizedTime > 0.65f)
         {
-            // Verde a amarillo (mayor parte superior)
             fillImage.color = Color.Lerp(yellow, green, (normalizedTime - 0.65f) / 0.35f);
         }
         else
         {
-            // Amarillo a rojo (menor parte inferior - más visible)
             fillImage.color = Color.Lerp(red, yellow, normalizedTime / 0.65f);
         }
 
@@ -70,7 +58,6 @@ public class Timer : MonoBehaviour
         {
             float shakeAmount = (shakeStartTime - normalizedTime) / shakeStartTime * 1.5f; // Stronger baseline
 
-            // More chaotic, erratic shake pattern
             Vector3 shakeOffset = new Vector3(
                 Mathf.Sin(Time.time * shakeSpeed) * shakeIntensity * shakeAmount +
                 Mathf.Sin(Time.time * shakeSpeed * 2.3f) * shakeIntensity * 0.4f * shakeAmount,
@@ -86,5 +73,13 @@ public class Timer : MonoBehaviour
         {
             sliderRect.localPosition = originalPosition;
         }
+    }
+
+    public void SetupTimer(float timeLimit)
+    {
+        this.timeLimit = timeLimit;
+        timeSlider.maxValue = timeLimit;
+        timeSlider.value = timeLimit;
+        timeSlider.minValue = 0f;
     }
 }
