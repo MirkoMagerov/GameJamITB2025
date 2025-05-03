@@ -25,6 +25,7 @@ public class NoteObject : MonoBehaviour
             if (canBePressed)
             {
                 NoteScore.instance.score += currentScore;
+                BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
                 Destroy(gameObject);
             }
         }
@@ -36,17 +37,21 @@ public class NoteObject : MonoBehaviour
         {
             canBePressed = true;
             buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
+            BackgroundGuitarEffects.Instance.ChangeColor(2);
             currentScore = 5;
         }
         else if (collision.tag == "OkScore")
         {
             buttonController.ChangeEffectMaterial(buttonController.effectOk);
+            BackgroundGuitarEffects.Instance.ChangeColor(1);
             currentScore = 2;
         }
         
         if (collision.tag == "MissScore")
         {
             NoteScore.instance.score -= 5;
+            BackgroundGuitarEffects.Instance.ChangeColor(0);
+            BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
             Destroy(gameObject);
         }
     }
