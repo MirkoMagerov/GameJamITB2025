@@ -1437,7 +1437,7 @@ MonoBehaviour:
   EKeyController: {fileID: 1466843399}
   RKeyController: {fileID: 1265371788}
   Keys: 000000000000000000000000
-  beatTempo: 60
+  beatTempo: 120
   enemyTurn: 1
 --- !u!4 &1183503193
 Transform:

@@ -46,6 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Guitar
+    uniqueID: 3633625127
+    locked: 0
   - name: Keys
     uniqueID: 3221453823
     locked: 0
