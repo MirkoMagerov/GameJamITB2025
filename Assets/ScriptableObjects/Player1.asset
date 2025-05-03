@@ -12,356 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
-  phrasesLevel:
-  - phrase: En la noche clara brilla la [],
+  phrasesCompass:
+  - phrase: "Ets un buf\xF3 recargolat, sense ni un bri de cervell, un aut\xE9ntic
+      idiota[]"
     words:
-    - points: 10
-      word: luna
+    - points: 0
+      word: ' '
       idWordSlot: 0
-    - points: -10
-      word: cuna
-      idWordSlot: 1
-    - points: -10
-      word: brisa
-      idWordSlot: 2
-  - phrase: la brisa susurra con voz muy [],
+    - points: 0
+      word: ' '
+      idWordSlot: 0
+    - points: 0
+      word: ' '
+      idWordSlot: 0
+  - phrase: Saltironeges com pilota, fent el ridicul a cada passa, una vergonya de
+      []
     words:
-    - points: 10
-      word: calmada
+    - points: 0
+      word: pilota
       idWordSlot: 0
-    - points: -10
-      word: gritona
-      idWordSlot: 1
-    - points: -10
-      word: suave
-      idWordSlot: 2
-  - phrase: Las hojas danzan sobre la [],
+    - points: 0
+      word: triota
+      idWordSlot: 0
+    - points: 0
+      word: ornitologa
+      idWordSlot: 0
+  - phrase: Et llueixes de servir l'amo com una [mascota]
     words:
-    - points: -10
-      word: hierba
+    - points: 0
+      word: mascota
       idWordSlot: 0
-    - points: 10
-      word: tierra
-      idWordSlot: 1
-    - points: -10
-      word: agua
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
+    - points: 0
+      word: ascota
+      idWordSlot: 0
+    - points: 0
+      word: "hipogluc\xE8mia"
+      idWordSlot: 0
+  - phrase: "I encara gosar, opinar, plena de vanitat i desdeny, campi\xF3 de la
+      [nota]"
     words:
-    - points: -10
-      word: agotador
+    - points: 0
+      word: nota
       idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
+    - points: 0
+      word: tota
       idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
+    - points: 0
+      word: groga
       idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
-    words:
-    - points: -10
-      word: agotador
-      idWordSlot: 0
-    - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2

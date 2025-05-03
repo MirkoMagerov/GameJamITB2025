@@ -22,9 +22,8 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (timeSlider.value == 0f)
-        {
-            ScoreManager.Instance.ApplyWordPlacement(false);
+        if (timeSlider.value <= 0f)
+        {            
             GameManager.Instance.EndOfPhrase();
             timeSlider.value = timeLimit;
             sliderRect.localPosition = originalPosition;

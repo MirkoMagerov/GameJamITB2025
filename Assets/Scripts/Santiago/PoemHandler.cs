@@ -21,7 +21,7 @@ public class PoemHandler : MonoBehaviour
     public void ChangePhrase(int phraseIndex)
     {
         ClosePhrase();
-        phrase.text = levelWordsSO.phrasesLevel[phraseIndex].phrase;
+        phrase.text = levelWordsSO.phrasesCompass[phraseIndex].phrase;
     }
     private void ClosePhrase()
     {

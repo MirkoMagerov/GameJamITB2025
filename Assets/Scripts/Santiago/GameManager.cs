@@ -6,9 +6,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool isplaying = true;
     public Player[] players = new Player[2];
     public GameObject laud;
-    public bool isPlayer1Attacking = true;
+    public bool leftPlayerPoem = true;
     public int currentPhrase;
 
     public int pointsPlayer1;
@@ -43,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         if (currentPhrase % phrasesPerRound != 0)
             return;
-        isPlayer1Attacking = !isPlayer1Attacking;
-        if (isPlayer1Attacking == false)
+        leftPlayerPoem = !leftPlayerPoem;
+        if (leftPlayerPoem == false)
         {
             players[0].poemGameObject.gameObject.SetActive(false);
             players[0].TimerHandler.gameObject.SetActive(false);
@@ -64,5 +65,21 @@ public class GameManager : MonoBehaviour
             players[0].TimerHandler.gameObject.SetActive(true);
             laud.transform.position = players[0].laudGameObject.gameObject.transform.position;
         }
+    }
+
+    public void OnEnable()
+    {
+        ScoreManager.OnEndOfGame += EndOfGame;
+    }
+
+    private void EndOfGame(int playerWin)
+    {
+        Debug.Log($"Player {playerWin}");
+        players[0].poemGameObject.gameObject.SetActive(!players[0].poemGameObject.gameObject.activeSelf);
+        players[0].TimerHandler.gameObject.SetActive(!players[0].TimerHandler.gameObject.activeSelf);
+        players[0].laudGameObject.gameObject.SetActive(!players[0].laudGameObject.gameObject.activeSelf);
+        players[1].poemGameObject.gameObject.SetActive(!players[1].poemGameObject.gameObject.activeSelf);
+        players[1].TimerHandler.gameObject.SetActive(!players[1].TimerHandler.gameObject.activeSelf);
+        players[1].laudGameObject.gameObject.SetActive(!players[1].laudGameObject.gameObject.activeSelf);
     }
 }

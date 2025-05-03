@@ -7,7 +7,7 @@ using UnityEngine;
 public class LevelWordsSO : ScriptableObject
 {
     [SerializeField]
-    public Phrase[] phrasesLevel;
+    public Phrase[] phrasesCompass;
 }
 
 [Serializable]

@@ -58,7 +58,7 @@ public class PoetryGenerator : MonoBehaviour
         poemLines.Clear();
         allSpecialWords.Clear();
 
-        foreach (Phrase phrase in specialWords.phrasesLevel)
+        foreach (Phrase phrase in specialWords.phrasesCompass)
         {
             poemLines.Enqueue(phrase.phrase);
         }
@@ -68,13 +68,13 @@ public class PoetryGenerator : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        if (currentPhraseIndex >= specialWords.phrasesLevel.Length)
+        if (currentPhraseIndex >= specialWords.phrasesCompass.Length)
         {
             EndPoem();
             return;
         }
 
-        currentPhrase = specialWords.phrasesLevel[currentPhraseIndex];
+        currentPhrase = specialWords.phrasesCompass[currentPhraseIndex];
         currentPhraseIndex++;
 
         currentLine = currentPhrase.phrase;
@@ -128,6 +128,7 @@ public class PoetryGenerator : MonoBehaviour
             {
                 timerSlider.gameObject.SetActive(false);
                 chosenWord = wordOptions[index];
+                ScoreManager.Instance.ApplyWordPlacement(chosenWord.points, GameManager.Instance.leftPlayerPoem);
                 selected = true;
                 Debug.Log("Palabra seleccionada: " + chosenWord.word + " - Puntos: " + chosenWord.points);
             }
@@ -135,9 +136,20 @@ public class PoetryGenerator : MonoBehaviour
 
         while (timer < pauseDuration && !selected)
         {
-            OnKeyInput(KeyCode.I, 0);
-            OnKeyInput(KeyCode.O, 1);
-            OnKeyInput(KeyCode.P, 2);
+            KeyCode[] keys;
+
+            if (GameManager.Instance.leftPlayerPoem)
+            {
+                keys = new[] { KeyCode.Q, KeyCode.W, KeyCode.E }; // jugador izquierdo
+            }
+            else
+            {
+                keys = new[] { KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow }; // jugador derecho
+            }
+
+            OnKeyInput(keys[0], 0);
+            OnKeyInput(keys[1], 1);
+            OnKeyInput(keys[2], 2);
 
             timer += Time.deltaTime;
             yield return null;
@@ -156,7 +168,7 @@ public class PoetryGenerator : MonoBehaviour
                 chosenWord = negativeWords[Random.Range(0, negativeWords.Count)];
             else
                 chosenWord = wordOptions[Random.Range(0, wordOptions.Length)];
-
+            ScoreManager.Instance.ApplyWordPlacement(chosenWord.points, GameManager.Instance.leftPlayerPoem);
             Debug.Log("Tiempo agotado. Se eligió aleatoriamente: " + chosenWord.word + " - Puntos: " + chosenWord.points);
         }
 

@@ -31,7 +31,7 @@ public class WordBoxHandler : MonoBehaviour
                 WordHandler wordHandler = child.GetComponent<WordHandler>();
                 if (wordHandler.Word.idWordSlot == IdWordSlot)
                 {
-                    if (GameManager.Instance.isPlayer1Attacking)
+                    if (GameManager.Instance.leftPlayerPoem)
                     {
                         GameManager.Instance.pointsPlayer1 += wordHandler.Word.points;
                     }
@@ -51,7 +51,7 @@ public class WordBoxHandler : MonoBehaviour
             WordHandler wordHandler = collision.gameObject.GetComponent<WordHandler>();
             if (wordHandler.Word.idWordSlot == IdWordSlot)
             {
-                if (GameManager.Instance.isPlayer1Attacking)
+                if (GameManager.Instance.leftPlayerPoem)
                 {
                     GameManager.Instance.pointsPlayer1 += wordHandler.Word.points;
                 }

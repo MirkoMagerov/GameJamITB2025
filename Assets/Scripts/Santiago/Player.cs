@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int points;
+    public int currentCompass;
     //public LevelWordsSO levelWordsSO;
     public GameObject poemGameObject;
     public GameObject laudGameObject;
