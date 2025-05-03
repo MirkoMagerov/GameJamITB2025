@@ -5,32 +5,66 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int currentCompass;
-    public List<WordBoxHandler> wordBoxHandlers = new List<WordBoxHandler>();
+    public Player[] players = new Player[2];
+    public bool isPlayer1Attacking = true;
+    public static GameManager Instance;
+    public int currentPhrase;
 
-    public int totalPoints;
+    public int pointsPlayer1;
+    public int pointsPlayer2;
     internal static Action<int> OnEndOfCompass;
 
     // Start is called before the first frame update
     void Start()
     {
-        OnEndOfCompass?.Invoke(currentCompass);
-        foreach (WordBoxHandler wordBoxHandler in wordBoxHandlers)
+        if (Instance == null)
         {
-            wordBoxHandler.EndOfCompass();
-            totalPoints += wordBoxHandler.points;
+            Instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        OnEndOfCompass?.Invoke(currentPhrase);
+        ChangeOfTurn();
     }
 
-    public void End()
+    public void EndOfPhrase()
     {
-        foreach (WordBoxHandler wordBoxHandler in wordBoxHandlers)
+        currentPhrase++;
+        Debug.Log(currentPhrase);
+        ChangeOfTurn();
+        OnEndOfCompass?.Invoke(currentPhrase);
+    }
+
+    public void ChangeOfTurn()
+    {
+        if (currentPhrase % 4 != 0)
+            return;
+        isPlayer1Attacking = !isPlayer1Attacking;
+        if (isPlayer1Attacking == false)
         {
-            wordBoxHandler.EndOfCompass();
-            totalPoints += wordBoxHandler.points;
+            players[0].poemHandler.gameObject.SetActive(false);
+            players[0].seedHandler.gameObject.SetActive(false);
+            players[0].TimerHandler.gameObject.SetActive(false);
+            players[0].laudHanderl.gameObject.SetActive(true);
+
+            players[1].seedHandler.gameObject.SetActive(true);
+            players[1].poemHandler.gameObject.SetActive(true);
+            players[1].TimerHandler.gameObject.SetActive(true);
+            players[1].laudHanderl.gameObject.SetActive(false);
         }
-        currentCompass++;
-        OnEndOfCompass?.Invoke(currentCompass);
-        Debug.Log("Total Points: " + totalPoints);
+        else
+        {
+            players[1].poemHandler.gameObject.SetActive(false);
+            players[1].seedHandler.gameObject.SetActive(false);
+            players[1].TimerHandler.gameObject.SetActive(false);
+            players[1].laudHanderl.gameObject.SetActive(true);
+
+            players[0].seedHandler.gameObject.SetActive(true);
+            players[0].poemHandler.gameObject.SetActive(true);
+            players[0].TimerHandler.gameObject.SetActive(true);
+            players[0].laudHanderl.gameObject.SetActive(false);
+        }
     }
 }

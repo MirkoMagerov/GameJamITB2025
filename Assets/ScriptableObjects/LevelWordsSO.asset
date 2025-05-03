@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelWordsSO
   m_EditorClassIdentifier: 
   phrasesLevel:
-  - phrase: Lorem,               ipsum
+  - phrase: she dont give
     words:
     - points: 10
       word: Ipsum
@@ -21,8 +21,8 @@ MonoBehaviour:
     - points: 4
       word: orea
       idWordSlot: 0
-    - points: -5
-      word: 33333
+    - points: 100
+      word: a fuck
       idWordSlot: 0
     - points: 0
       word: 44444
@@ -30,10 +30,10 @@ MonoBehaviour:
     - points: 1
       word: wwqwq11212
       idWordSlot: 0
-  - phrase: besos de amor
+  - phrase: 'sabe que la quiero pero '
     words:
     - points: 0
-      word: 66666
+      word: she dont give a fuck
       idWordSlot: 1
     - points: 0
       word: 77777
@@ -47,10 +47,10 @@ MonoBehaviour:
     - points: 0
       word: 00000
       idWordSlot: 1
-  - phrase: cccccc
+  - phrase: 'quiere alguien con futuro y '
     words:
     - points: 0
-      word: 1212121
+      word: sin tanto cambio de humor
       idWordSlot: 2
     - points: 0
       word: 13131313
@@ -64,13 +64,13 @@ MonoBehaviour:
     - points: 0
       word: 161616161
       idWordSlot: 2
-  - phrase: dddddd
+  - phrase: she dont give a
     words:
     - points: 0
       word: 17171717
       idWordSlot: 3
     - points: 0
-      word: 18181818
+      word: fuck
       idWordSlot: 3
     - points: 0
       word: 19191919
@@ -81,7 +81,7 @@ MonoBehaviour:
     - points: 0
       word: 2121212121
       idWordSlot: 3
-  - phrase: eeeeee
+  - phrase: 'abby she dont give a '
     words:
     - points: 0
       word: 2525252525

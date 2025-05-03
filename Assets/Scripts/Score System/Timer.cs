@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +31,7 @@ public class Timer : MonoBehaviour
         if (timeSlider.value == 0f)
         {
             ScoreManager.Instance.ApplyWordPlacement(false);
-            Debug.Log("Time's up! You lose!");
+            GameManager.Instance.EndOfPhrase();
             timeSlider.value = timeLimit;
             sliderRect.localPosition = originalPosition;
         }

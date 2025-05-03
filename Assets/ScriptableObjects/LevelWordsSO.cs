@@ -10,7 +10,6 @@ public class LevelWordsSO : ScriptableObject
     public Phrase[] phrasesLevel;
 }
 
-
 [Serializable]
 public class Phrase
 {

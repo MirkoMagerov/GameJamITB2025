@@ -8,6 +8,7 @@ TagManager:
   - OkScore
   - PerfectScore
   - MissScore
+  - Word
   layers:
   - Default
   - TransparentFX
