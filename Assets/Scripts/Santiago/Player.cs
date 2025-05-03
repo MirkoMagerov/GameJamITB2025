@@ -6,8 +6,7 @@ public class Player : MonoBehaviour
 {
     public int points;
     public LevelWordsSO levelWordsSO;
-    public SeedHandler seedHandler;
-    public PoemHandler poemHandler;
+    public GameObject poemHandler;
     public GameObject laudHanderl;
     public GameObject TimerHandler;
     // Start is called before the first frame update

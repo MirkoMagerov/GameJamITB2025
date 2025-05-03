@@ -45,11 +45,9 @@ public class GameManager : MonoBehaviour
         if (isPlayer1Attacking == false)
         {
             players[0].poemHandler.gameObject.SetActive(false);
-            players[0].seedHandler.gameObject.SetActive(false);
             players[0].TimerHandler.gameObject.SetActive(false);
             players[0].laudHanderl.gameObject.SetActive(true);
 
-            players[1].seedHandler.gameObject.SetActive(true);
             players[1].poemHandler.gameObject.SetActive(true);
             players[1].TimerHandler.gameObject.SetActive(true);
             players[1].laudHanderl.gameObject.SetActive(false);
@@ -57,11 +55,9 @@ public class GameManager : MonoBehaviour
         else
         {
             players[1].poemHandler.gameObject.SetActive(false);
-            players[1].seedHandler.gameObject.SetActive(false);
             players[1].TimerHandler.gameObject.SetActive(false);
             players[1].laudHanderl.gameObject.SetActive(true);
 
-            players[0].seedHandler.gameObject.SetActive(true);
             players[0].poemHandler.gameObject.SetActive(true);
             players[0].TimerHandler.gameObject.SetActive(true);
             players[0].laudHanderl.gameObject.SetActive(false);

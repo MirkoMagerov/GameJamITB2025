@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Santiago/Menu.unity
+    guid: 50854e557b672f846b73b8d2d69f8331
   - enabled: 1
     path: Assets/Scenes/Santiago/MockUpBattle.unity
     guid: e73adad6efa120c4aaf185d19613eb5c

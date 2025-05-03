@@ -125,10 +125,10 @@ public class PoetryGenerator : MonoBehaviour
         {
             if (!selected && Input.GetKeyDown(key))
             {
-                Debug.Log("Palabra seleccionada: " + chosenWord.word + " - Puntos: " + chosenWord.points);
                 timerSlider.gameObject.SetActive(false);
                 chosenWord = wordOptions[index];
                 selected = true;
+                Debug.Log("Palabra seleccionada: " + chosenWord.word + " - Puntos: " + chosenWord.points);
             }
         }
 
