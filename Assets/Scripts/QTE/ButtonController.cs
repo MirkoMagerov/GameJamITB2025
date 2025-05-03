@@ -7,6 +7,9 @@ public class ButtonController : MonoBehaviour
 
     public GameObject rippleEffect;
 
+    public GameObject notesEffectOne;
+    public GameObject notesEffectTwo;
+
     public GameObject laudString;
 
     public Material effectPerfect;
@@ -41,6 +44,8 @@ public class ButtonController : MonoBehaviour
 
             laudString.GetComponent<Animator>().Play("Cuerda");
             rippleEffect.GetComponent<ParticleSystem>().Play();
+            notesEffectOne.GetComponent<ParticleSystem>().Play();
+            notesEffectTwo.GetComponent<ParticleSystem>().Play();
         }
 
         if (Input.GetKeyUp(keyToPress))
