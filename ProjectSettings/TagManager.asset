@@ -8,7 +8,6 @@ TagManager:
   - OkScore
   - PerfectScore
   - MissScore
-  - ButtonCollider
   layers:
   - Default
   - TransparentFX
@@ -45,9 +44,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Guitar
-    uniqueID: 3633625127
     locked: 0
   - name: Keys
     uniqueID: 3221453823

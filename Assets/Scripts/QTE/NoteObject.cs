@@ -9,37 +9,11 @@ public class NoteObject : MonoBehaviour
 
     public float beatTempo;
 
-    public float fadeInDuration = 2f;
-
     public bool canBePressed;
 
     public int currentScore = 0;
 
     public KeyCode keyToPress;
-
-    private void Start()
-    {
-        StartCoroutine(FadeIn());
-    }
-
-    private IEnumerator FadeIn()
-    {
-        float fadeDuration = fadeInDuration;
-        float elapsedTime = 0f;
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
-        Color startColor = spriteRenderer.color;
-        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
-
-        while (elapsedTime < fadeDuration)
-        {
-            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-            spriteRenderer.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-    }
 
     private void Update()
     {
@@ -68,8 +42,6 @@ public class NoteObject : MonoBehaviour
         }
         else if (collision.tag == "OkScore")
         {
-            Debug.Log("Ok score");
-            canBePressed = true;
             buttonController.ChangeEffectMaterial(buttonController.effectOk);
             BackgroundGuitarEffects.Instance.ChangeColor(1);
             currentScore = 2;
@@ -86,9 +58,8 @@ public class NoteObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "ButtonCollider")
+        if (collision.tag == "OkScore")
         {
-            Debug.Log("Missed");
             canBePressed = false;
             currentScore = 0;
         }
