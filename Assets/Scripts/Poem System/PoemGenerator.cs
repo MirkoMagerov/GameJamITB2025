@@ -97,8 +97,20 @@ public class PoetryGenerator : MonoBehaviour
 
         if (insertIndex == -1)
         {
-            Debug.LogError(line);
-            Debug.LogError("No se encontró el marcador [ en la línea.");
+            // Frase sin palabra seleccionable: mostrar toda la línea de forma normal
+            string currentLineTextWithoutOption = "";
+            for (int i = 0; i < line.Length; i++)
+            {
+                currentLineTextWithoutOption += line[i];
+                poemText.text = previousText + currentLineTextWithoutOption;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+            poemText.text += "\n";
+            isTyping = false;
+            typingCoroutine = null;
+            yield return new WaitForSeconds(0.5f);
+            DisplayNextLine();
             yield break;
         }
 

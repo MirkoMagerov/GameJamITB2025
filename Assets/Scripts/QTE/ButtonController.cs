@@ -42,8 +42,8 @@ public class ButtonController : MonoBehaviour
                 ChangeEffectMaterial(effectMiss);
                 BackgroundGuitarEffects.Instance.ChangeColor(0);
                 BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
-                
-                NoteScore.instance.score -= 3;
+
+                ScoreManager.Instance.ApplyQTEResult(-3, GameManager.Instance.leftPlayerPoem);
             }
 
             laudString.GetComponent<Animator>().Play("Cuerda");

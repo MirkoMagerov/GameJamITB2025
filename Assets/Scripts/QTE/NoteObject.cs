@@ -49,7 +49,7 @@ public class NoteObject : MonoBehaviour
         {
             if (canBePressed)
             {
-                NoteScore.instance.score += currentScore;
+                ScoreManager.Instance.ApplyQTEResult(currentScore, GameManager.Instance.leftPlayerPoem);
                 BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
                 if (currentScore == 5)
@@ -84,10 +84,10 @@ public class NoteObject : MonoBehaviour
             canBePressed = true;
             currentScore = 2;
         }
-        
+
         if (collision.tag == "MissScore")
         {
-            NoteScore.instance.score -= 5;
+            ScoreManager.Instance.ApplyQTEResult(-5, GameManager.Instance.leftPlayerPoem);
             BackgroundGuitarEffects.Instance.ChangeColor(0);
             BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
