@@ -46,23 +46,23 @@ public class GameManager : MonoBehaviour
         isPlayer1Attacking = !isPlayer1Attacking;
         if (isPlayer1Attacking == false)
         {
-            players[0].poemHandler.gameObject.SetActive(false);
+            players[0].poemGameObject.gameObject.SetActive(false);
             players[0].TimerHandler.gameObject.SetActive(false);
-            laud.transform.position = players[0].laudHanderl.gameObject.transform.position;
+            laud.transform.position = players[0].laudGameObject.gameObject.transform.position;
 
-            players[1].poemHandler.gameObject.SetActive(true);
+            players[1].poemGameObject.gameObject.SetActive(true);
             players[1].TimerHandler.gameObject.SetActive(true);
-            players[1].laudHanderl.gameObject.SetActive(false);
+            players[1].laudGameObject.gameObject.SetActive(false);
         }
         else
         {
-            players[1].poemHandler.gameObject.SetActive(false);
+            players[1].poemGameObject.gameObject.SetActive(false);
             players[1].TimerHandler.gameObject.SetActive(false);
-            players[1].laudHanderl.gameObject.SetActive(true);
+            players[1].laudGameObject.gameObject.SetActive(true);
 
-            players[0].poemHandler.gameObject.SetActive(true);
+            players[0].poemGameObject.gameObject.SetActive(true);
             players[0].TimerHandler.gameObject.SetActive(true);
-            laud.transform.position = players[0].laudHanderl.gameObject.transform.position;
+            laud.transform.position = players[0].laudGameObject.gameObject.transform.position;
         }
     }
 }
