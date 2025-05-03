@@ -34,6 +34,8 @@ public class ButtonController : MonoBehaviour
             if (GetComponentInChildren<KeyErrorDetection>().givesError)
             {
                 ChangeEffectMaterial(effectMiss);
+                BackgroundGuitarEffects.Instance.ChangeColor(0);
+                BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
                 NoteScore.instance.score -= 3;
             }
 
