@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phrasesCompass:
   - phrase: "Ets un buf\xF3 recargolat, sense ni un bri de cervell, un aut\xE9ntic
-      idiota"
+      idiota[]"
     words:
     - points: 0
       word: ' '
