@@ -40,7 +40,6 @@ public class ScoreManager : MonoBehaviour
             ApplyWordPlacement(false);
         }
 
-        currentScore -= sliderDecayRate * Time.deltaTime;
         UpdateSlider();
         CheckVictory();
     }
@@ -71,11 +70,11 @@ public class ScoreManager : MonoBehaviour
     {
         if (currentScore >= winThreshold)
         {
-            Debug.Log("¡Jugador gana la batalla de gallos!");
+            Debug.Log("¡Jugador Azul gana la batalla de gallos!");
         }
         else if (currentScore <= loseThreshold)
         {
-            Debug.Log("El NPC gana la batalla.");
+            Debug.Log("¡Jugador Rojo gana la batalla de gallos!");
         }
     }
 }
