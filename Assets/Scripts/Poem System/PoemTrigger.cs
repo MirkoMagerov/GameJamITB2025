@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PoetryTrigger : MonoBehaviour
 {
+    public PoetryGenerator poetryGenerator;
     public LevelWordsSO specialWords;
 
     void Update()
@@ -11,13 +12,16 @@ public class PoetryTrigger : MonoBehaviour
             TriggerPoem();
         }
     }
-
+    private void Start()
+    {
+        if (poetryGenerator == null)
+            {
+            poetryGenerator = GetComponent<PoetryGenerator>();
+        }
+    }
     public void TriggerPoem()
     {
-        if (PoetryGenerator.Instance != null)
-        {
-            PoetryGenerator.Instance.specialWords = specialWords;
-            PoetryGenerator.Instance.StartPoem();
-        }
+        poetryGenerator.specialWords = specialWords;
+        poetryGenerator.StartPoem();
     }
 }

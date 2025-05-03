@@ -1,0 +1,367 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
+  m_Name: Player1
+  m_EditorClassIdentifier: 
+  phrasesLevel:
+  - phrase: En la noche clara brilla la [],
+    words:
+    - points: 10
+      word: luna
+      idWordSlot: 0
+    - points: -10
+      word: cuna
+      idWordSlot: 1
+    - points: -10
+      word: brisa
+      idWordSlot: 2
+  - phrase: la brisa susurra con voz muy [],
+    words:
+    - points: 10
+      word: calmada
+      idWordSlot: 0
+    - points: -10
+      word: gritona
+      idWordSlot: 1
+    - points: -10
+      word: suave
+      idWordSlot: 2
+  - phrase: Las hojas danzan sobre la [],
+    words:
+    - points: -10
+      word: hierba
+      idWordSlot: 0
+    - points: 10
+      word: tierra
+      idWordSlot: 1
+    - points: -10
+      word: agua
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2
+  - phrase: mientras el tiempo se vuelve [].
+    words:
+    - points: -10
+      word: agotador
+      idWordSlot: 0
+    - points: -10
+      word: tranquilo
+      idWordSlot: 1
+    - points: 10
+      word: calmado
+      idWordSlot: 2

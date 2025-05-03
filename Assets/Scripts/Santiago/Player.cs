@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int points;
-    public LevelWordsSO levelWordsSO;
+    //public LevelWordsSO levelWordsSO;
     public GameObject poemHandler;
     public GameObject laudHanderl;
     public GameObject TimerHandler;
