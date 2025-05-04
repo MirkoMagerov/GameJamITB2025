@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         ScoreManager.Instance.OnEndOfGame += EndOfGame;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         StartCoroutine(StartGameRoutine());
     }
 

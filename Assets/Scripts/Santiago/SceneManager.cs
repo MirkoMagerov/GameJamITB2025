@@ -38,6 +38,7 @@ public class SceneManager : MonoBehaviour
         // Si quieres cambiar el cursor en ciertas escenas
         if (sceneIndex == 1)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else

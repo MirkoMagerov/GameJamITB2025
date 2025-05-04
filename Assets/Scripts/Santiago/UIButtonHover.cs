@@ -25,6 +25,7 @@ public class UIButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("Pointer Entered Button: " + gameObject.name);
         if (buttonImage != null)
             buttonImage.color = hoverColor;
         if (buttonText != null)
