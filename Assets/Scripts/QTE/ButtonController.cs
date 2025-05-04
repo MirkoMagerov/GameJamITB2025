@@ -6,6 +6,8 @@ public class ButtonController : MonoBehaviour
 {
     public BackgroundGuitarEffects guitarEffect;
 
+    public ButtonEffect buttonEffect;
+
     public GameObject rippleEffect;
 
     public GameObject notesEffectOne;
@@ -42,6 +44,9 @@ public class ButtonController : MonoBehaviour
                 ChangeEffectMaterial(effectMiss);
                 guitarEffect.ChangeColor(0);
                 guitarEffect.GetComponent<Animator>().Play("GuitarBackground");
+
+                buttonEffect.ChangeColor(0);
+                buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
 
                 ScoreManager.Instance.ApplyScore(3, !GameManager.Instance.leftPlayerPoem);
             }

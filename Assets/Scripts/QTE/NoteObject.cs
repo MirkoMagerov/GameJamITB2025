@@ -6,6 +6,8 @@ public class NoteObject : MonoBehaviour
 {
     public BackgroundGuitarEffects backgroundGuitarEffects;
 
+    public ButtonEffect buttonEffect;
+
     public ButtonController buttonController;
 
     public float beatTempo;
@@ -52,6 +54,7 @@ public class NoteObject : MonoBehaviour
             {
                 ScoreManager.Instance.ApplyScore(currentScore, !GameManager.Instance.leftPlayerPoem);
                 backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
+                buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
 
                 if (currentScore == 4)
                 {
@@ -59,6 +62,7 @@ public class NoteObject : MonoBehaviour
                     myObject.PlaySound();
                     buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
                     backgroundGuitarEffects.ChangeColor(2);
+                    buttonEffect.ChangeColor(2);
                 }
                 else if (currentScore == 1)
                 {
@@ -66,6 +70,7 @@ public class NoteObject : MonoBehaviour
                     myObject.PlaySound();
                     buttonController.ChangeEffectMaterial(buttonController.effectOk);
                     backgroundGuitarEffects.ChangeColor(1);
+                    buttonEffect.ChangeColor(1);
                 }
 
                 Destroy(gameObject);
@@ -91,6 +96,8 @@ public class NoteObject : MonoBehaviour
             ScoreManager.Instance.ApplyScore(-3, !GameManager.Instance.leftPlayerPoem);
             backgroundGuitarEffects.ChangeColor(0);
             backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
+            buttonEffect.ChangeColor(0);
+            buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
 
             AudioManager myObject = GameObject.Find("MissSFX").GetComponent<AudioManager>();
             myObject.PlayRandomPitch();
