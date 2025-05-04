@@ -31,7 +31,8 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         pauseCanvas.SetActive(true);
     }
-    private void ResumeGame()
+
+    public void ResumeGame()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -39,16 +40,20 @@ public class PauseManager : MonoBehaviour
         pauseCanvas.SetActive(false);
     }
 
-    public void Settings()
-    {
-
-    }
-
     public void RestartLevel()
     {
         int currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(currentScene);
         UnityEngine.SceneManagement.SceneManager.LoadScene(currentScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        ResumeGame();
+    }
+
+    public void LoadMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu", UnityEngine.SceneManagement.LoadSceneMode.Single);
+        ResumeGame();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void QuitGame()
