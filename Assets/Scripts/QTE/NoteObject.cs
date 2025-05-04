@@ -52,8 +52,11 @@ public class NoteObject : MonoBehaviour
         {
             if (canBePressed)
             {
+
                 ScoreManager.Instance.ApplyScore(currentScore, !GameManager.Instance.leftPlayerPoem);
                 backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
+
+                ButtonEffect buttonEffect = GameObject.Find("Square" + keyToPress.ToString()).GetComponent<ButtonEffect>();
                 buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
 
                 if (currentScore == 4)
@@ -96,8 +99,6 @@ public class NoteObject : MonoBehaviour
             ScoreManager.Instance.ApplyScore(-3, !GameManager.Instance.leftPlayerPoem);
             backgroundGuitarEffects.ChangeColor(0);
             backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
-            buttonEffect.ChangeColor(0);
-            buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
 
             AudioManager myObject = GameObject.Find("MissSFX").GetComponent<AudioManager>();
             myObject.PlayRandomPitch();
