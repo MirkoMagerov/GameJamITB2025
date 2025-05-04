@@ -43,10 +43,15 @@ public class ButtonController : MonoBehaviour
                 guitarEffect.ChangeColor(0);
                 guitarEffect.GetComponent<Animator>().Play("GuitarBackground");
 
-
-                ButtonEffect buttonEffect = GameObject.Find("Square" + keyToPress.ToString()).GetComponent<ButtonEffect>();
-                buttonEffect.ChangeColor(0);
-                buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
+                if (GameObject.Find("Square" + keyToPress.ToString()) != null)
+                {
+                    ButtonEffect buttonEffect = GameObject.Find("Square" + keyToPress.ToString()).GetComponent<ButtonEffect>();
+                    if (buttonEffect != null)
+                    {
+                        buttonEffect.ChangeColor(0);
+                        buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
+                    }
+                }
 
                 ScoreManager.Instance.ApplyScore(3, !GameManager.Instance.leftPlayerPoem);
             }

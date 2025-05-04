@@ -56,8 +56,18 @@ public class NoteObject : MonoBehaviour
                 ScoreManager.Instance.ApplyScore(currentScore, !GameManager.Instance.leftPlayerPoem);
                 backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
 
-                ButtonEffect buttonEffect = GameObject.Find("Square" + keyToPress.ToString()).GetComponent<ButtonEffect>();
-                buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
+                ButtonEffect buttonEffect = null;
+
+                if (GameObject.Find("Square" + keyToPress.ToString()) != null)
+                {
+                    buttonEffect = GameObject.Find("Square" + keyToPress.ToString()).GetComponent<ButtonEffect>();
+
+                    if (buttonEffect != null)
+                    {
+                        buttonEffect.GetComponent<Animator>().Play("SquareOpacity");
+                    }
+                }
+
 
                 if (currentScore == 4)
                 {
@@ -66,6 +76,7 @@ public class NoteObject : MonoBehaviour
                     buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
                     backgroundGuitarEffects.ChangeColor(2);
                     buttonEffect.ChangeColor(2);
+
                 }
                 else if (currentScore == 1)
                 {
@@ -74,6 +85,7 @@ public class NoteObject : MonoBehaviour
                     buttonController.ChangeEffectMaterial(buttonController.effectOk);
                     backgroundGuitarEffects.ChangeColor(1);
                     buttonEffect.ChangeColor(1);
+
                 }
 
                 Destroy(gameObject);
