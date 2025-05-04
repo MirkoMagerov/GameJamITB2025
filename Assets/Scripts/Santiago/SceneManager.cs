@@ -33,4 +33,9 @@ public class SceneManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
