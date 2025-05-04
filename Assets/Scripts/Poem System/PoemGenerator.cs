@@ -82,9 +82,12 @@ public class PoetryGenerator : MonoBehaviour
                 return;
             }
 
+            poemText.text = "";
+
             currentVerse = specialWords.verses[currentVerseIndex];
             currentPhraseIndex = 0;
         }
+
 
         currentPhrase = currentVerse.phrases[currentPhraseIndex];
         currentPhraseIndex++;

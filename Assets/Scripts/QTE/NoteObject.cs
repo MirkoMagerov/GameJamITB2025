@@ -87,7 +87,7 @@ public class NoteObject : MonoBehaviour
 
         if (collision.tag == "MissScore")
         {
-            ScoreManager.Instance.ApplyScore(-7, !GameManager.Instance.leftPlayerPoem);
+            ScoreManager.Instance.ApplyScore(-3, !GameManager.Instance.leftPlayerPoem);
             BackgroundGuitarEffects.Instance.ChangeColor(0);
             BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
