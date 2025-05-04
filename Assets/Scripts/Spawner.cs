@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] private GameObject[] gameObjects;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        int randomIndex = Random.Range(0, 2);
+        if (randomIndex == 0) gameObjects[0].SetActive(false);
+        else gameObjects[1].SetActive(false);
     }
 }
