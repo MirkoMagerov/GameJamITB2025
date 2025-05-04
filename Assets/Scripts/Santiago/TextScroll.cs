@@ -16,6 +16,10 @@ public class TextScroll : MonoBehaviour
     [SerializeField]
     private float scrollSpeed = 100f;
 
+    //logic of change the poetry
+    private int currentPoetryIndex = 0;
+
+
     private void OnValidate()
     {
         if (textRectTransform == null)
@@ -43,7 +47,7 @@ public class TextScroll : MonoBehaviour
     {
         // Set the text to the first line of the poetry
         int poetry = Random.Range(0,poetrySO.lines.Length + 1);
-        TextMeshPro.text = poetrySO.lines[1];
+        TextMeshPro.text = poetrySO.lines[currentPoetryIndex];
         //// Set the size of the RectTransform to fit the text
         textRectTransform.sizeDelta = new Vector2(textRectTransform.sizeDelta.x, TextMeshPro.preferredHeight);
         //// Set the position of the RectTransform to be at the bottom of the screen
@@ -54,5 +58,22 @@ public class TextScroll : MonoBehaviour
     void Update()
     {
         textRectTransform.anchoredPosition += new Vector2(0, Time.deltaTime * scrollSpeed);
+    }
+
+    public void ChangePoetry()
+    {
+        // Increment the poetry index
+        currentPoetryIndex++;
+        // If the index is out of bounds, reset it to 0
+        if (currentPoetryIndex >= poetrySO.lines.Length)
+        {
+            currentPoetryIndex = 0;
+        }
+        // Set the text to the new line of the poetry
+        TextMeshPro.text = poetrySO.lines[currentPoetryIndex];
+        // Set the size of the RectTransform to fit the text
+        textRectTransform.sizeDelta = new Vector2(textRectTransform.sizeDelta.x, TextMeshPro.preferredHeight);
+        // Set the position of the RectTransform to be at the bottom of the screen
+        textRectTransform.anchoredPosition = new Vector2(textRectTransform.anchoredPosition.x, -textRectTransform.sizeDelta.y / 2);
     }
 }

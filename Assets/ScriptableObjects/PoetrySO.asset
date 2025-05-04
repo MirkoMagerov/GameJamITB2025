@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4751a943a18ce40a368851d77defc3, type: 3}
   m_Name: PoetrySO
   m_EditorClassIdentifier: 
-  title: 
-  author: 
   lines:
   - "AMIC\n\r\nI\r\nAmicx (Senher, no\xB7us o cal dir\r\nneys lo nom pus encarzezir),\r\nd\u2019ambas
     partz vos tramet salutz,\r\ncar es pros et aperceubutz;\r\ns\u2019era\xB7us manca
@@ -68,3 +66,22 @@ MonoBehaviour:
     cinc anz a non donet colp ni pres\r\nen l'escut d'aur en que laq dompna es,\r\nni
     en tornei non capusa ni dola,\r\nanz ten per fol qui sas armas l'afolla\r\nBergued\xE0,
     Guillem de. \u201CAmic marqu\xE8s, encara no fa gaire\u201D"
+  - "ARA QUE SOM AL MES DE FRED\n\r\nI\r\nAr el mes que la neu e\xB7l frei\r\nvei
+    venir e\xB7l gel e\xB7l aurei,\r\nchantarai de las tracios\r\nque\xB7m dis Mos
+    Sogres, vieills tignos;\r\ne pois no m\u2019en val dret ni fei,\r\nal bran d\u2019acier
+    en clam mercei\r\net al ferran Matagilos.\n\r\nII\r\nE sobre tot al Glorios,\r\nque
+    sap mos dreitz e mas razos,\r\nq\u2019estiers autres amics no\xB7m vei\r\nmas
+    sol Ma Sogra, cui soplei,\r\nq\u2019es la mieiller e la plus pros\r\ndompna que
+    sia demest nos;\r\ne ment qui que m\u2019o desautrei.\n\r\nIII\r\nE ja no s\u2019en
+    combat\u2019ab mei\r\nus cavalliers ni dui ni trei,\r\nque la mieiller e la plus
+    pros,\r\nbella Sogra, non siatz vos\r\ne la gensser de nuilla lei;\r\nq\u2019ie\xB7n
+    vensseria, fe qe\xB7us dei,\r\ndos catalans o tres gascos.\n\r\nIV\r\nSogra,
+    per vos estau joios,\r\nfrancs e fins et humelios;\r\ne qan ma seigneira desplei,\r\nen
+    batailla o en tornei,\r\nvauc de ferir plus voluntos,\r\nque, s\u2019era lioparz
+    o leos,\r\nno\xB7is darion tant gran esfrei.\n\r\nV\r\nArnaudon, en ton palafrei\r\nvai
+    dir a mon seignor lo rei\r\n- joglar, non sias temoros,\r\nanz sias del dire
+    coitosque per fals consseill no\xB7m gerrei,\r\nqu\u2019eu farai dreich a sa
+    mercei\r\ne mandamen volontairos.\n\r\nVI\r\nE ve\xB7m mieills q\u2019en sa cort
+    pladei\r\ne q\u2019el en sia poderos.\n\r\nVII\r\nE qui m\u2019apella de no-fei\r\nnon
+    l\u2019en soan negre ni ros.\r\nBergued\xE0, Guillem de. \u201CAra que som al
+    mes de fred\u201D"
