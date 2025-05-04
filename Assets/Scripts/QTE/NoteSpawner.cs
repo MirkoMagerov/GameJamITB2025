@@ -16,6 +16,8 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private ButtonController EKeyController;
     private List<GameObject> activeNotes = new List<GameObject>();
 
+    public BackgroundGuitarEffects backgroundGuitarEffects;
+
     public float beatTempo;
 
     public bool playerOneTurn;
@@ -106,6 +108,7 @@ public class NoteSpawner : MonoBehaviour
                 QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 QKey.GetComponent<NoteObject>().buttonController = QKeyController;
                 QKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                QKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(QKey);
                 break;
             case 1:
@@ -114,6 +117,7 @@ public class NoteSpawner : MonoBehaviour
                 WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 WKey.GetComponent<NoteObject>().buttonController = WKeyController;
                 WKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                WKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(WKey);
                 break;
             case 2:
@@ -122,6 +126,7 @@ public class NoteSpawner : MonoBehaviour
                 EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 EKey.GetComponent<NoteObject>().buttonController = EKeyController;
                 EKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                EKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(EKey);
                 break;
         }
@@ -137,6 +142,7 @@ public class NoteSpawner : MonoBehaviour
                 ArrowLeftKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowLeftKey.GetComponent<NoteObject>().buttonController = QKeyController;
                 ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                ArrowLeftKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(ArrowLeftKey);
                 break;
             case 1:
@@ -145,6 +151,7 @@ public class NoteSpawner : MonoBehaviour
                 ArrowDownKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowDownKey.GetComponent<NoteObject>().buttonController = WKeyController;
                 ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                ArrowDownKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(ArrowDownKey);
                 break;
             case 2:
@@ -153,6 +160,7 @@ public class NoteSpawner : MonoBehaviour
                 ArrowRightKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowRightKey.GetComponent<NoteObject>().buttonController = EKeyController;
                 ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                ArrowRightKey.GetComponent<NoteObject>().backgroundGuitarEffects = backgroundGuitarEffects;
                 activeNotes.Add(ArrowRightKey);
                 break;
         }

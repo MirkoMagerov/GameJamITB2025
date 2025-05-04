@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
+    public BackgroundGuitarEffects guitarEffect;
 
     public GameObject rippleEffect;
 
@@ -39,8 +40,8 @@ public class ButtonController : MonoBehaviour
                 myObject.PlayRandomPitch();
 
                 ChangeEffectMaterial(effectMiss);
-                BackgroundGuitarEffects.Instance.ChangeColor(0);
-                BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
+                guitarEffect.ChangeColor(0);
+                guitarEffect.GetComponent<Animator>().Play("GuitarBackground");
 
                 ScoreManager.Instance.ApplyScore(3, !GameManager.Instance.leftPlayerPoem);
             }

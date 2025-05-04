@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NoteObject : MonoBehaviour
 {
+    public BackgroundGuitarEffects backgroundGuitarEffects;
 
     public ButtonController buttonController;
 
@@ -50,21 +51,21 @@ public class NoteObject : MonoBehaviour
             if (canBePressed)
             {
                 ScoreManager.Instance.ApplyScore(currentScore, !GameManager.Instance.leftPlayerPoem);
-                BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
+                backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
 
                 if (currentScore == 4)
                 {
                     AudioManager myObject = GameObject.Find("PerfectSFX").GetComponent<AudioManager>();
                     myObject.PlaySound();
                     buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
-                    BackgroundGuitarEffects.Instance.ChangeColor(2);
+                    backgroundGuitarEffects.ChangeColor(2);
                 }
                 else if (currentScore == 1)
                 {
                     AudioManager myObject = GameObject.Find("OkSFX").GetComponent<AudioManager>();
                     myObject.PlaySound();
                     buttonController.ChangeEffectMaterial(buttonController.effectOk);
-                    BackgroundGuitarEffects.Instance.ChangeColor(1);
+                    backgroundGuitarEffects.ChangeColor(1);
                 }
 
                 Destroy(gameObject);
@@ -88,8 +89,8 @@ public class NoteObject : MonoBehaviour
         if (collision.tag == "MissScore")
         {
             ScoreManager.Instance.ApplyScore(-3, !GameManager.Instance.leftPlayerPoem);
-            BackgroundGuitarEffects.Instance.ChangeColor(0);
-            BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
+            backgroundGuitarEffects.ChangeColor(0);
+            backgroundGuitarEffects.GetComponent<Animator>().Play("GuitarBackground");
 
             AudioManager myObject = GameObject.Find("MissSFX").GetComponent<AudioManager>();
             myObject.PlayRandomPitch();

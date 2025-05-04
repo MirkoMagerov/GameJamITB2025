@@ -5,7 +5,6 @@ using UnityEngine;
 public class BackgroundGuitarEffects : MonoBehaviour
 {
 
-    public static BackgroundGuitarEffects Instance;
 
     private SpriteRenderer theSR;
 
@@ -18,17 +17,6 @@ public class BackgroundGuitarEffects : MonoBehaviour
         theSR = GetComponent<SpriteRenderer>();
     }
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void ChangeColor(int color)
     {
