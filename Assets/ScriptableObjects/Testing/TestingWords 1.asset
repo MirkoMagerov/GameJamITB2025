@@ -10,62 +10,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
-  m_Name: TestingWords
+  m_Name: TestingWords 1
   m_EditorClassIdentifier: 
   verses:
   - phrases:
-    - phrase: "Can\xE7oneta lleu i plana,"
+    - phrase: "Can\xE7oneta de joglar,"
       words: []
-    - phrase: lleugereta, sense []
+    - phrase: per fer riure i [].
       words:
       - points: -10
-        word: gana
-        idWordSlot: 0
-      - points: 40
-        word: ufana
+        word: escampar
         idWordSlot: 0
       - points: -10
-        word: gitana
+        word: avergonyir
         idWordSlot: 0
-    - phrase: "far\xE9 sobre Mon Marqu\xE8s,"
+      - points: 40
+        word: criticar
+        idWordSlot: 0
+    - phrase: "Parla d\u2019un marqu\xE8s cofat,"
       words: []
-    - phrase: "tra\xEFdor de Matap"
-      words: []
-    - phrase: tan farcit d'engany i [].
+    - phrase: "que va net\u2026 per\xF2 \xE9s []."
       words:
       - points: 40
-        word: "ob\xE8s"
+        word: brutat
         idWordSlot: 0
       - points: -10
-        word: "est\xE8s"
+        word: alt
         idWordSlot: 0
       - points: -10
-        word: gros
+        word: xafat
         idWordSlot: 0
   - phrases:
-    - phrase: Porta anell de fals or pur,
+    - phrase: "Diu que t\xE9 sang de llinatge,"
       words: []
-    - phrase: fa olor [] com celler brut,
+    - phrase: "per\xF2 ve d\u2019un []."
       words:
-      - points: 25
-        word: "r\xE0ncia"
-        idWordSlot: 0
-      - points: 10
-        word: estranya
+      - points: 40
+        word: pasturatge
         idWordSlot: 0
       - points: -10
-        word: "nul\xB7la"
+        word: mentor
         idWordSlot: 0
-    - phrase: diu que ve d'estirp valenta,
+      - points: -10
+        word: mentider
+        idWordSlot: 0
+    - phrase: "T\xE9 castell i t\xE9 estendard,"
       words: []
-    - phrase: "per\xF2 \xE9s fill d'una ventafocs []."
+    - phrase: "per\xF2 el cervell li fa []."
       words:
       - points: -10
-        word: plana
-        idWordSlot: 0
-      - points: 25
-        word: somrenta
+        word: voltes
         idWordSlot: 0
       - points: -10
-        word: boja
+        word: malament
+        idWordSlot: 0
+      - points: 40
+        word: tard
         idWordSlot: 0

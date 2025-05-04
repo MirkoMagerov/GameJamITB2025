@@ -10,62 +10,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
-  m_Name: TestingWords
+  m_Name: TestingWords 3
   m_EditorClassIdentifier: 
   verses:
   - phrases:
-    - phrase: "Can\xE7oneta lleu i plana,"
+    - phrase: "Ai marqu\xE8s de poca tra\xE7a,"
       words: []
-    - phrase: lleugereta, sense []
-      words:
-      - points: -10
-        word: gana
-        idWordSlot: 0
-      - points: 40
-        word: ufana
-        idWordSlot: 0
-      - points: -10
-        word: gitana
-        idWordSlot: 0
-    - phrase: "far\xE9 sobre Mon Marqu\xE8s,"
-      words: []
-    - phrase: "tra\xEFdor de Matap"
-      words: []
-    - phrase: tan farcit d'engany i [].
+    - phrase: "tens la gl\xF2ria tota en []."
       words:
       - points: 40
-        word: "ob\xE8s"
+        word: "pla\xE7a"
         idWordSlot: 0
       - points: -10
-        word: "est\xE8s"
+        word: Barcelona
         idWordSlot: 0
       - points: -10
-        word: gros
+        word: llit
+        idWordSlot: 0
+    - phrase: Parles alt, gest amagat,
+      words: []
+    - phrase: "ets valent\u2026 si est\xE0s assegut al llit [];"
+      words:
+      - points: -10
+        word: rumiant
+        idWordSlot: 0
+      - points: -10
+        word: dormint
+        idWordSlot: 0
+      - points: 40
+        word: estovat
         idWordSlot: 0
   - phrases:
-    - phrase: Porta anell de fals or pur,
+    - phrase: Fas jurar al teu escuder
       words: []
-    - phrase: fa olor [] com celler brut,
-      words:
-      - points: 25
-        word: "r\xE0ncia"
-        idWordSlot: 0
-      - points: 10
-        word: estranya
-        idWordSlot: 0
-      - points: -10
-        word: "nul\xB7la"
-        idWordSlot: 0
-    - phrase: diu que ve d'estirp valenta,
-      words: []
-    - phrase: "per\xF2 \xE9s fill d'una ventafocs []."
+    - phrase: "que tu sol vas v\xE8ncer un [],"
       words:
       - points: -10
-        word: plana
+        word: blau
         idWordSlot: 0
-      - points: 25
-        word: somrenta
+      - points: 40
+        word: rei
         idWordSlot: 0
       - points: -10
-        word: boja
+        word: jugada
+        idWordSlot: 0
+    - phrase: "per\xF2 el rei era un titella"
+      words: []
+    - phrase: i tu et vas caure a la [].
+      words:
+      - points: -10
+        word: casa
+        idWordSlot: 0
+      - points: -10
+        word: "pla\xE7a"
+        idWordSlot: 0
+      - points: 40
+        word: paella
         idWordSlot: 0

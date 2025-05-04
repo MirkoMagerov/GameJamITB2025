@@ -10,6 +10,7 @@ public class PoetryGenerator : MonoBehaviour
     [SerializeField] private Timer timerSlider;
 
     public TextMeshProUGUI poemText;
+    public LevelWordsSO[] specialWordsList;
     public LevelWordsSO specialWords;
 
     public TextMeshProUGUI wordSlot1;
@@ -47,6 +48,11 @@ public class PoetryGenerator : MonoBehaviour
 
     public void StartPoem()
     {
+
+        int randomIndex = Random.Range(0, specialWordsList.Length);
+
+        specialWords = specialWordsList[randomIndex];
+
         StartCoroutine(StartPoemCoroutine());
     }
 

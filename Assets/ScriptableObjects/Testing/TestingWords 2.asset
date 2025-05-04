@@ -10,62 +10,60 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
-  m_Name: TestingWords
+  m_Name: TestingWords 2
   m_EditorClassIdentifier: 
   verses:
   - phrases:
-    - phrase: "Can\xE7oneta lleu i plana,"
+    - phrase: "Can\xE7oneta sense pressa,"
       words: []
-    - phrase: lleugereta, sense []
+    - phrase: "pel marqu\xE8s de la []."
       words:
       - points: -10
-        word: gana
+        word: por
         idWordSlot: 0
       - points: 40
-        word: ufana
+        word: tristesa
         idWordSlot: 0
       - points: -10
-        word: gitana
+        word: mentida
         idWordSlot: 0
-    - phrase: "far\xE9 sobre Mon Marqu\xE8s,"
+    - phrase: Parla fi, camina tort,
       words: []
-    - phrase: "tra\xEFdor de Matap"
-      words: []
-    - phrase: tan farcit d'engany i [].
+    - phrase: "t\xE9 corona\u2026 per\xF2 \xE9s []."
       words:
       - points: 40
-        word: "ob\xE8s"
+        word: mort
+        idWordSlot: 0
+      - points: 20
+        word: sort
         idWordSlot: 0
       - points: -10
-        word: "est\xE8s"
-        idWordSlot: 0
-      - points: -10
-        word: gros
+        word: falsa
         idWordSlot: 0
   - phrases:
-    - phrase: Porta anell de fals or pur,
+    - phrase: Porta capa, fa gran pas,
       words: []
-    - phrase: fa olor [] com celler brut,
+    - phrase: per tapar-se el cul tan [].
       words:
-      - points: 25
-        word: "r\xE0ncia"
-        idWordSlot: 0
-      - points: 10
-        word: estranya
+      - points: 40
+        word: gras
         idWordSlot: 0
       - points: -10
-        word: "nul\xB7la"
+        word: dolent
         idWordSlot: 0
-    - phrase: diu que ve d'estirp valenta,
+      - points: 20
+        word: gran
+        idWordSlot: 0
+    - phrase: Diu que estima sa senyora,
       words: []
-    - phrase: "per\xF2 \xE9s fill d'una ventafocs []."
+    - phrase: "per\xF2 cada nit en []."
       words:
       - points: -10
-        word: plana
+        word: riu
         idWordSlot: 0
-      - points: 25
-        word: somrenta
+      - points: 40
+        word: plora
         idWordSlot: 0
       - points: -10
-        word: boja
+        word: dorm
         idWordSlot: 0
