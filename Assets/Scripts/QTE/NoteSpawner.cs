@@ -5,7 +5,6 @@ using UnityEngine.Assertions.Must;
 
 public class NoteSpawner : MonoBehaviour
 {
-
     [SerializeField] private GameObject keyPrefab;
 
     [SerializeField] private Transform QKeyPosition;
@@ -15,26 +14,43 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private ButtonController QKeyController;
     [SerializeField] private ButtonController WKeyController;
     [SerializeField] private ButtonController EKeyController;
-
+    private List<GameObject> activeNotes = new List<GameObject>();
 
     public float beatTempo;
 
     public bool playerOneTurn;
 
     private bool gameEnded = false;
+    private Coroutine spawnKeyCoroutine;
 
-    private void Start()
+    void Awake()
     {
         beatTempo = beatTempo / 60f;
+    }
 
-        StartCoroutine(SpawnKey());
+    void OnEnable()
+    {
+        spawnKeyCoroutine = StartCoroutine(SpawnKey());
+        GameManager.SwapTurn += ClearNotes;
+        GameManager.OnEndOfGame += ClearNotes;
+    }
+
+    void OnDisable()
+    {
+        if (spawnKeyCoroutine != null)
+        {
+            StopCoroutine(spawnKeyCoroutine);
+            spawnKeyCoroutine = null;
+        }
+        GameManager.SwapTurn -= ClearNotes;
+        GameManager.OnEndOfGame -= ClearNotes;
     }
 
     private IEnumerator SpawnKey()
     {
         while (!gameEnded)
         {
-            if (playerOneTurn)
+            if (!GameManager.Instance.leftPlayerPoem)
             {
                 yield return new WaitForSeconds(beatTempo);
 
@@ -76,7 +92,6 @@ public class NoteSpawner : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void CreateKey(int randomKey)
@@ -89,6 +104,7 @@ public class NoteSpawner : MonoBehaviour
                 QKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 QKey.GetComponent<NoteObject>().buttonController = QKeyController;
                 QKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(QKey);
                 break;
             case 1:
                 GameObject WKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
@@ -96,6 +112,7 @@ public class NoteSpawner : MonoBehaviour
                 WKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 WKey.GetComponent<NoteObject>().buttonController = WKeyController;
                 WKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(WKey);
                 break;
             case 2:
                 GameObject EKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
@@ -103,6 +120,7 @@ public class NoteSpawner : MonoBehaviour
                 EKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 EKey.GetComponent<NoteObject>().buttonController = EKeyController;
                 EKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(EKey);
                 break;
         }
     }
@@ -117,6 +135,7 @@ public class NoteSpawner : MonoBehaviour
                 ArrowLeftKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowLeftKey.GetComponent<NoteObject>().buttonController = QKeyController;
                 ArrowLeftKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(ArrowLeftKey);
                 break;
             case 1:
                 GameObject ArrowDownKey = Instantiate(keyPrefab, WKeyPosition.position, Quaternion.identity);
@@ -124,6 +143,7 @@ public class NoteSpawner : MonoBehaviour
                 ArrowDownKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowDownKey.GetComponent<NoteObject>().buttonController = WKeyController;
                 ArrowDownKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(ArrowDownKey);
                 break;
             case 2:
                 GameObject ArrowRightKey = Instantiate(keyPrefab, EKeyPosition.position, Quaternion.identity);
@@ -131,9 +151,21 @@ public class NoteSpawner : MonoBehaviour
                 ArrowRightKey.GetComponent<NoteObject>().beatTempo = beatTempo;
                 ArrowRightKey.GetComponent<NoteObject>().buttonController = EKeyController;
                 ArrowRightKey.GetComponent<NoteObject>().fadeInDuration = beatTempo;
+                activeNotes.Add(ArrowRightKey);
                 break;
         }
     }
+
+    public void ClearNotes()
+    {
+        StopCoroutine(spawnKeyCoroutine);
+        foreach (GameObject note in activeNotes)
+        {
+            if (note != null)
+            {
+                Destroy(note);
+            }
+        }
+        activeNotes.Clear();
+    }
 }
-
-

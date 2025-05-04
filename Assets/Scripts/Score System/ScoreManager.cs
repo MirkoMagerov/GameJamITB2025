@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private float leftPlayerWinPoints = 100f;
     [SerializeField] private float rightPlayerWinPoints = 0f;
 
-    public static Action<int> OnEndOfGame;
+    public Action<int> OnEndOfGame;
 
     private float currentScore;
 
@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
     public void ApplyQTEResult(int score, bool isLeftPlayer)
     {
         // Si el jugador es el de la derecha, invertimos la dirección
-        if (!isLeftPlayer)
+        if (isLeftPlayer)
             score *= -1;
 
         currentScore += score;
@@ -70,13 +70,17 @@ public class ScoreManager : MonoBehaviour
     {
         if (currentScore <= leftPlayerWinPoints)
         {
-            Debug.Log("¡Jugador Azul gana la batalla de gallos!");
             OnEndOfGame?.Invoke(1);
         }
         else if (currentScore >= rightPlayerWinPoints)
         {
-            Debug.Log("¡Jugador Rojo gana la batalla de gallos!");
             OnEndOfGame?.Invoke(-1);
         }
+    }
+
+    public void ResetScore()
+    {
+        currentScore = sliderStartValue;
+        UpdateSlider();
     }
 }
