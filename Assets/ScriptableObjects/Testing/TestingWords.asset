@@ -49,3 +49,70 @@ MonoBehaviour:
       - points: -10
         word: llana
         idWordSlot: 0
+    - phrase: tan farcit d'engany i [].
+      words:
+      - points: 25
+        word: "ob\xE8s"
+        idWordSlot: 0
+      - points: -10
+        word: "est\xE8s"
+        idWordSlot: 0
+      - points: -10
+        word: gros
+        idWordSlot: 0
+  - phrases:
+    - phrase: "Benhagen, Marqu\xE8s, les []"
+      words:
+      - points: -10
+        word: penes
+        idWordSlot: 0
+      - points: -10
+        word: dames
+        idWordSlot: 0
+      - points: 25
+        word: pedres
+        idWordSlot: 0
+    - phrase: de Melgur, prop de Some []
+      words:
+      - points: -10
+        word: llanes
+        idWordSlot: 0
+      - points: -10
+        word: galtes
+        idWordSlot: 0
+      - points: 25
+        word: iras
+        idWordSlot: 0
+    - phrase: "on perd\xE9reu de dents []"
+      words:
+      - points: 25
+        word: tres
+        idWordSlot: 0
+      - points: -10
+        word: vells
+        idWordSlot: 0
+      - points: -10
+        word: dues
+        idWordSlot: 0
+    - phrase: "per\xF2 no essent les davan[]"
+      words:
+      - points: -10
+        word: planes
+        idWordSlot: 0
+      - points: 25
+        word: teres
+        idWordSlot: 0
+      - points: -10
+        word: 'fermes '
+        idWordSlot: 0
+    - phrase: es pot dir que no ha estat []
+      words:
+      - points: -10
+        word: greu
+        idWordSlot: 0
+      - points: 25
+        word: res
+        idWordSlot: 0
+      - points: -10
+        word: clar
+        idWordSlot: 0
