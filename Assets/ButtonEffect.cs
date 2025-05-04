@@ -18,7 +18,7 @@ public class ButtonEffect : MonoBehaviour
 
 
     public void ChangeColor(int color)
-    {
+    {   
 
         if (color == 0)
         {
