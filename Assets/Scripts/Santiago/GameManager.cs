@@ -8,18 +8,20 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool isplaying = true;
     public Player[] players = new Player[2];
-    public GameObject laud;
     public bool leftPlayerPoem = true;
     public int currentPhrase;
-
-    public int pointsPlayer1;
-    public int pointsPlayer2;
+    [SerializeField] private GameObject victoryCanvas;
     public int phrasesPerRound = 2;
     internal static Action<int> OnEndOfCompass;
+    public static Action SwapTurn;
+    public static Action OnEndOfGame;
 
     // Start is called before the first frame update
     void Start()
     {
+        int randomPlayer = UnityEngine.Random.Range(0, 2);
+        leftPlayerPoem = randomPlayer == 0;
+
         if (Instance == null)
         {
             Instance = this;
@@ -28,8 +30,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        OnEndOfCompass?.Invoke(currentPhrase);
+        ScoreManager.Instance.OnEndOfGame += EndOfGame;
         ChangeOfTurn();
+    }
+
+    void OnDisable()
+    {
+        ScoreManager.Instance.OnEndOfGame -= EndOfGame;
     }
 
     void Update()
@@ -50,44 +57,50 @@ public class GameManager : MonoBehaviour
 
     public void ChangeOfTurn()
     {
+        SwapTurn?.Invoke();
         // if (currentPhrase % phrasesPerRound != 0)
         //     return;
         leftPlayerPoem = !leftPlayerPoem;
         if (!leftPlayerPoem)
         {
-            players[0].poemGameObject.gameObject.SetActive(false);
-            players[0].TimerHandler.gameObject.SetActive(false);
-            players[0].laudGameObject.gameObject.SetActive(true);
+            players[0].poemGameObject.SetActive(false);
+            players[0].laudGameObject.SetActive(true);
 
-            players[1].poemGameObject.gameObject.SetActive(true);
-            players[1].TimerHandler.gameObject.SetActive(true);
-            players[1].laudGameObject.gameObject.SetActive(false);
+            players[1].poemGameObject.SetActive(true);
+            players[1].laudGameObject.SetActive(false);
         }
         else
         {
-            players[1].poemGameObject.gameObject.SetActive(false);
-            players[1].TimerHandler.gameObject.SetActive(false);
-            players[1].laudGameObject.gameObject.SetActive(true);
+            players[1].poemGameObject.SetActive(false);
+            players[1].laudGameObject.SetActive(true);
 
-            players[0].poemGameObject.gameObject.SetActive(true);
-            players[0].TimerHandler.gameObject.SetActive(true);
-            players[0].laudGameObject.gameObject.SetActive(false);
+            players[0].poemGameObject.SetActive(true);
+            players[0].laudGameObject.SetActive(false);
         }
-    }
-
-    public void OnEnable()
-    {
-        ScoreManager.OnEndOfGame += EndOfGame;
     }
 
     private void EndOfGame(int playerWin)
     {
-        Debug.Log($"Player {playerWin}");
-        players[0].poemGameObject.gameObject.SetActive(!players[0].poemGameObject.gameObject.activeSelf);
-        players[0].TimerHandler.gameObject.SetActive(!players[0].TimerHandler.gameObject.activeSelf);
-        players[0].laudGameObject.gameObject.SetActive(!players[0].laudGameObject.gameObject.activeSelf);
-        players[1].poemGameObject.gameObject.SetActive(!players[1].poemGameObject.gameObject.activeSelf);
-        players[1].TimerHandler.gameObject.SetActive(!players[1].TimerHandler.gameObject.activeSelf);
-        players[1].laudGameObject.gameObject.SetActive(!players[1].laudGameObject.gameObject.activeSelf);
+        OnEndOfGame?.Invoke();
+        victoryCanvas.SetActive(true);
+        victoryCanvas.GetComponent<VictoryManager>().SetWinner(playerWin);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        players[0].poemGameObject.SetActive(false);
+        players[0].laudGameObject.SetActive(false);
+        players[1].poemGameObject.SetActive(false);
+        players[1].laudGameObject.SetActive(false);
+    }
+
+    public void ResetGame()
+    {
+        victoryCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        currentPhrase = 0;
+        isplaying = true;
+        leftPlayerPoem = !leftPlayerPoem;
+        ChangeOfTurn();
+        ScoreManager.Instance.ResetScore();
     }
 }

@@ -45,10 +45,14 @@ public class PoetryGenerator : MonoBehaviour
         //}
     }
 
+    void OnEnable()
+    {
+        StartPoem();
+    }
+
     void Start()
     {
         timerSlider.gameObject.SetActive(false);
-        StartPoem();
     }
 
     public void StartPoem()

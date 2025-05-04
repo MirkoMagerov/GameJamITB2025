@@ -33,11 +33,9 @@ public class WordBoxHandler : MonoBehaviour
                 {
                     if (GameManager.Instance.leftPlayerPoem)
                     {
-                        GameManager.Instance.pointsPlayer1 += wordHandler.Word.points;
                     }
                     else
                     {
-                        GameManager.Instance.pointsPlayer2 += wordHandler.Word.points;
                     }
                 }
             }
@@ -53,11 +51,9 @@ public class WordBoxHandler : MonoBehaviour
             {
                 if (GameManager.Instance.leftPlayerPoem)
                 {
-                    GameManager.Instance.pointsPlayer1 += wordHandler.Word.points;
                 }
                 else
                 {
-                    GameManager.Instance.pointsPlayer2 += wordHandler.Word.points;
                 }
             }
         }

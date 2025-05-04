@@ -12,48 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
   m_Name: TestingWords
   m_EditorClassIdentifier: 
-  phrasesLevel:
-  - phrase: En la noche clara brilla la [],
+  phrasesCompass:
+  - phrase: "Can\xE7oneta lleu i plana"
+    words: []
+  - phrase: "que no pesa ni \xE9s []"
     words:
-    - points: 10
-      word: luna
+    - points: 20
+      word: ufana
       idWordSlot: 0
     - points: -10
-      word: cuna
+      word: esponja
       idWordSlot: 1
     - points: -10
-      word: brisa
+      word: corda
       idWordSlot: 2
-  - phrase: la brisa susurra con voz muy [],
-    words:
-    - points: 10
-      word: calmada
-      idWordSlot: 0
-    - points: -10
-      word: gritona
-      idWordSlot: 1
-    - points: -10
-      word: suave
-      idWordSlot: 2
-  - phrase: Las hojas danzan sobre la [],
+  - phrase: "jo la faig del meu Marqu\xE8s"
+    words: []
+  - phrase: de Mataplana, fera []
     words:
     - points: -10
-      word: hierba
+      word: format
       idWordSlot: 0
-    - points: 10
-      word: tierra
-      idWordSlot: 1
+    - points: 20
+      word: insana
+      idWordSlot: 0
     - points: -10
-      word: agua
-      idWordSlot: 2
-  - phrase: mientras el tiempo se vuelve [].
+      word: ritme
+      idWordSlot: 0
+  - phrase: "que d\u2019enganys n\u2019\xE9s tot un []"
     words:
     - points: -10
-      word: agotador
+      word: bruc
       idWordSlot: 0
     - points: -10
-      word: tranquilo
-      idWordSlot: 1
-    - points: 10
-      word: calmado
-      idWordSlot: 2
+      word: sopar
+      idWordSlot: 0
+    - points: 20
+      word: gres
+      idWordSlot: 0
