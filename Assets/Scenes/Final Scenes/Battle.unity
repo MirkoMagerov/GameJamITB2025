@@ -1470,7 +1470,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1649467497}
         m_TargetAssemblyTypeName: VictoryManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2892,16 +2892,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4101195645733821721, guid: 274d4379af700a64d843427e7f4c463f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5290555159049164225, guid: 274d4379af700a64d843427e7f4c463f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 1828220792703838219, guid: 274d4379af700a64d843427e7f4c463f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 6743407872542550737, guid: 274d4379af700a64d843427e7f4c463f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 274d4379af700a64d843427e7f4c463f, type: 3}
 --- !u!224 &1476397306 stripped
 RectTransform:
@@ -4161,11 +4152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleSlider: {fileID: 292927724}
-  sliderStartValue: 100
+  sliderStartValue: 125
   sliderMin: 0
-  sliderMax: 200
+  sliderMax: 250
   leftPlayerWinPoints: 0
-  rightPlayerWinPoints: 200
+  rightPlayerWinPoints: 250
 --- !u!1 &2071262316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6016922520084869669, guid: 274d4379af700a64d843427e7f4c463f, type: 3}

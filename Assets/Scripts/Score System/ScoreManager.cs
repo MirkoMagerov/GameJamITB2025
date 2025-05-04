@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private float sliderStartValue = 50f;
     [SerializeField] private float sliderMin = 0f;
     [SerializeField] private float sliderMax = 100f;
-    [SerializeField] private float sliderDecayRate = 1f;
     [SerializeField] private float leftPlayerWinPoints = 100f;
     [SerializeField] private float rightPlayerWinPoints = 0f;
 
@@ -38,27 +37,36 @@ public class ScoreManager : MonoBehaviour
         CheckVictory();
     }
 
-    public void ApplyQTEResult(int score, bool isLeftPlayer)
+    // public void ApplyQTEResult(int score, bool isLeftPlayer)
+    // {
+    //     // Si el jugador es el de la derecha, invertimos la dirección
+    //     if (isLeftPlayer)
+    //         score *= -1;
+
+    //     currentScore += score;
+    //     UpdateSlider();
+    //     CheckVictory();
+    // }
+
+    public void ApplyScore(int points, bool isLeftPlayer)
     {
-        // Si el jugador es el de la derecha, invertimos la dirección
-        if (isLeftPlayer)
-            score *= -1;
+        if (!isLeftPlayer)
+            points = -points;
 
-        currentScore += score;
-        UpdateSlider();
-        CheckVictory();
-    }
-
-
-    public void ApplyWordPlacement(int points, bool leftPLayer)
-    {
-        points = leftPLayer ? points : -points;
-        Debug.Log($"ScoreManager: {points}");
         currentScore += points;
-
+        GameManager.Instance.CheckForForcedSwap();
         UpdateSlider();
         CheckVictory();
     }
+
+    // public void ApplyWordPlacement(int points, bool leftPLayer)
+    // {
+    //     points = leftPLayer ? points : -points;
+    //     currentScore += points;
+
+    //     UpdateSlider();
+    //     CheckVictory();
+    // }
 
     private void UpdateSlider()
     {
@@ -82,5 +90,10 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore = sliderStartValue;
         UpdateSlider();
+    }
+
+    public float GetCurrentScore()
+    {
+        return currentScore;
     }
 }

@@ -48,6 +48,8 @@ public class NoteSpawner : MonoBehaviour
 
     private IEnumerator SpawnKey()
     {
+        yield return new WaitForSeconds(1.5f);
+
         while (!gameEnded)
         {
             if (!GameManager.Instance.leftPlayerPoem)

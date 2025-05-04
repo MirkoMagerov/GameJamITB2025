@@ -7,7 +7,13 @@ using UnityEngine;
 public class LevelWordsSO : ScriptableObject
 {
     [SerializeField]
-    public Phrase[] phrasesCompass;
+    public Verse[] verses;
+}
+
+[Serializable]
+public class Verse
+{
+    public Phrase[] phrases;
 }
 
 [Serializable]

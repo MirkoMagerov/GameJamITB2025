@@ -12,41 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87c16a489f46b34e8009fea6b1cf553, type: 3}
   m_Name: TestingWords
   m_EditorClassIdentifier: 
-  phrasesCompass:
-  - phrase: "Can\xE7oneta lleu i plana"
-    words: []
-  - phrase: "que no pesa ni \xE9s []"
-    words:
-    - points: 20
-      word: ufana
-      idWordSlot: 0
-    - points: -10
-      word: esponja
-      idWordSlot: 1
-    - points: -10
-      word: corda
-      idWordSlot: 2
-  - phrase: "jo la faig del meu Marqu\xE8s"
-    words: []
-  - phrase: de Mataplana, fera []
-    words:
-    - points: -10
-      word: format
-      idWordSlot: 0
-    - points: 20
-      word: insana
-      idWordSlot: 0
-    - points: -10
-      word: ritme
-      idWordSlot: 0
-  - phrase: "que d\u2019enganys n\u2019\xE9s tot un []"
-    words:
-    - points: -10
-      word: bruc
-      idWordSlot: 0
-    - points: -10
-      word: sopar
-      idWordSlot: 0
-    - points: 20
-      word: gres
-      idWordSlot: 0
+  verses:
+  - phrases:
+    - phrase: "Can\xE7oneta lleu i plana,"
+      words: []
+    - phrase: lleugereta, sense []
+      words:
+      - points: -10
+        word: gana
+        idWordSlot: 0
+      - points: 25
+        word: ufana
+        idWordSlot: 0
+      - points: -10
+        word: gitana
+        idWordSlot: 0
+    - phrase: "far\xE9 sobre Mon Marqu\xE8s,"
+      words:
+      - points: -10
+        word: gana
+        idWordSlot: 0
+      - points: 25
+        word: ufana
+        idWordSlot: 0
+      - points: -10
+        word: gitana
+        idWordSlot: 0
+    - phrase: "tra\xEFdor de Matap"
+      words:
+      - points: 25
+        word: 'plana '
+        idWordSlot: 0
+      - points: -10
+        word: cabana
+        idWordSlot: 0
+      - points: -10
+        word: llana
+        idWordSlot: 0
