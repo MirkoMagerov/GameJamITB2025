@@ -49,17 +49,17 @@ public class NoteObject : MonoBehaviour
         {
             if (canBePressed)
             {
-                ScoreManager.Instance.ApplyQTEResult(currentScore, GameManager.Instance.leftPlayerPoem);
+                ScoreManager.Instance.ApplyScore(currentScore, !GameManager.Instance.leftPlayerPoem);
                 BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
-                if (currentScore == 5)
+                if (currentScore == 4)
                 {
                     AudioManager myObject = GameObject.Find("PerfectSFX").GetComponent<AudioManager>();
                     myObject.PlaySound();
                     buttonController.ChangeEffectMaterial(buttonController.effectPerfect);
                     BackgroundGuitarEffects.Instance.ChangeColor(2);
                 }
-                else if (currentScore == 2)
+                else if (currentScore == 1)
                 {
                     AudioManager myObject = GameObject.Find("OkSFX").GetComponent<AudioManager>();
                     myObject.PlaySound();
@@ -77,17 +77,17 @@ public class NoteObject : MonoBehaviour
         if (collision.tag == "PerfectScore")
         {
             canBePressed = true;
-            currentScore = 5;
+            currentScore = 4;
         }
         else if (collision.tag == "OkScore")
         {
             canBePressed = true;
-            currentScore = 2;
+            currentScore = 1;
         }
 
         if (collision.tag == "MissScore")
         {
-            ScoreManager.Instance.ApplyQTEResult(-5, GameManager.Instance.leftPlayerPoem);
+            ScoreManager.Instance.ApplyScore(-7, !GameManager.Instance.leftPlayerPoem);
             BackgroundGuitarEffects.Instance.ChangeColor(0);
             BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
@@ -106,6 +106,4 @@ public class NoteObject : MonoBehaviour
             currentScore = 0;
         }
     }
-
-
 }

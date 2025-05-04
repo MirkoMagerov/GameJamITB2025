@@ -24,8 +24,9 @@ public class VictoryManager : MonoBehaviour
         GameManager.Instance.ResetGame();
     }
 
-    public void GoToMainMenu()
+    public void MainMenu()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

@@ -29,57 +29,64 @@ public class PoetryGenerator : MonoBehaviour
     private List<Word> allSpecialWords = new List<Word>();
 
     private Phrase currentPhrase;
+    private Verse currentVerse;
+    private int currentVerseIndex = 0;
     private int currentPhraseIndex = 0;
     private Coroutine pauseCoroutine;
     private bool optionSelected;
-
-    private void Awake()
-    {
-        //if (Instance == null)
-        //{
-        //    Instance = this;
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-    }
 
     void OnEnable()
     {
         StartPoem();
     }
 
-    void Start()
+    void OnDisable()
     {
         timerSlider.gameObject.SetActive(false);
     }
 
     public void StartPoem()
     {
+        StartCoroutine(StartPoemCoroutine());
+    }
+
+    private IEnumerator StartPoemCoroutine()
+    {
         isDisplaying = true;
         poemText.text = "";
         poemLines.Clear();
         allSpecialWords.Clear();
 
-        foreach (Phrase phrase in specialWords.phrasesCompass)
+        currentVerseIndex = 0;
+        currentPhraseIndex = 0;
+        currentVerse = specialWords.verses[currentVerseIndex];
+
+        foreach (Phrase phrase in currentVerse.phrases)
         {
             poemLines.Enqueue(phrase.phrase);
         }
+
+        yield return new WaitForSeconds(1.5f);
 
         DisplayNextLine();
     }
 
     public void DisplayNextLine()
     {
-        Debug.Log(currentPhraseIndex);
-        if (currentPhraseIndex >= specialWords.phrasesCompass.Length)
+        if (currentPhraseIndex >= currentVerse.phrases.Length)
         {
-            EndPoem();
-            return;
+            currentVerseIndex++;
+            if (currentVerseIndex >= specialWords.verses.Length)
+            {
+                EndPoem();
+                return;
+            }
+
+            currentVerse = specialWords.verses[currentVerseIndex];
+            currentPhraseIndex = 0;
         }
 
-        currentPhrase = specialWords.phrasesCompass[currentPhraseIndex];
+        currentPhrase = currentVerse.phrases[currentPhraseIndex];
         currentPhraseIndex++;
 
         currentLine = currentPhrase.phrase;
@@ -91,6 +98,7 @@ public class PoetryGenerator : MonoBehaviour
 
         typingCoroutine = StartCoroutine(TypeLine(currentLine, currentPhrase.words));
     }
+
 
     public IEnumerator TypeLine(string line, Word[] wordOptions)
     {
@@ -145,7 +153,7 @@ public class PoetryGenerator : MonoBehaviour
             {
                 timerSlider.gameObject.SetActive(false);
                 chosenWord = wordOptions[index];
-                ScoreManager.Instance.ApplyWordPlacement(chosenWord.points, GameManager.Instance.leftPlayerPoem);
+                ScoreManager.Instance.ApplyScore(chosenWord.points, GameManager.Instance.leftPlayerPoem);
                 selected = true;
                 Debug.Log("Palabra seleccionada: " + chosenWord.word + " - Puntos: " + chosenWord.points);
             }
@@ -185,8 +193,7 @@ public class PoetryGenerator : MonoBehaviour
                 chosenWord = negativeWords[Random.Range(0, negativeWords.Count)];
             else
                 chosenWord = wordOptions[Random.Range(0, wordOptions.Length)];
-            ScoreManager.Instance.ApplyWordPlacement(chosenWord.points, GameManager.Instance.leftPlayerPoem);
-            Debug.Log("Tiempo agotado. Se eligió aleatoriamente: " + chosenWord.word + " - Puntos: " + chosenWord.points);
+            ScoreManager.Instance.ApplyScore(chosenWord.points, GameManager.Instance.leftPlayerPoem);
         }
 
         HideWordOptions();
@@ -216,6 +223,7 @@ public class PoetryGenerator : MonoBehaviour
 
     public void EndPoem()
     {
+        Debug.Log("Fin del poema");
         isDisplaying = false;
         GameManager.Instance.ChangeOfTurn();
     }

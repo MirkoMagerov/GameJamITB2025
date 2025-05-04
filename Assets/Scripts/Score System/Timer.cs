@@ -20,10 +20,16 @@ public class Timer : MonoBehaviour
         originalPosition = sliderRect.localPosition;
     }
 
+    void OnDisable()
+    {
+        timeSlider.value = timeLimit;
+        sliderRect.localPosition = originalPosition;
+    }
+
     void Update()
     {
         if (timeSlider.value <= 0f)
-        {            
+        {
             GameManager.Instance.EndOfPhrase();
             timeSlider.value = timeLimit;
             sliderRect.localPosition = originalPosition;

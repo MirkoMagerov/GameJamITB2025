@@ -33,7 +33,6 @@ public class ButtonController : MonoBehaviour
         {
             theSR.sprite = pressedImage;
 
-
             if (GetComponentInChildren<KeyErrorDetection>().givesError)
             {
                 AudioManager myObject = GameObject.Find("MissSFX").GetComponent<AudioManager>();
@@ -43,7 +42,7 @@ public class ButtonController : MonoBehaviour
                 BackgroundGuitarEffects.Instance.ChangeColor(0);
                 BackgroundGuitarEffects.Instance.GetComponent<Animator>().Play("GuitarBackground");
 
-                ScoreManager.Instance.ApplyQTEResult(-3, GameManager.Instance.leftPlayerPoem);
+                ScoreManager.Instance.ApplyScore(3, !GameManager.Instance.leftPlayerPoem);
             }
 
             laudString.GetComponent<Animator>().Play("Cuerda");

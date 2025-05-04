@@ -13,7 +13,7 @@ public class SeedHandler : MonoBehaviour
     public void SetWords(int phrase)
     {
         // Get the words from the LevelWordsSO
-        Phrase[] phrases = levelWordsSO.phrasesCompass;
+        Phrase[] phrases = levelWordsSO.verses[0].phrases;
         // Loop through the words and set them in the WordHandler
         for (int i = 0; i < words.Count; i++)
         {
@@ -35,6 +35,6 @@ public class SeedHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
